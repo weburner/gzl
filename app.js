@@ -48,11 +48,12 @@ $(document).ready(function () {
         });
     }
 
-    hideSlide();
+
     $(".outside-content").css('opacity', '0');
     $('#main-content').css('opacity', '0');
 
     var currentIndex = 0;
+    var currentIndex_swiper_vertical = 0;
 
     function initSwiper(){
 
@@ -83,9 +84,10 @@ $(document).ready(function () {
                 }
             },
             onTransitionStart: function(swiper){
+
                 if(currentIndex != swiper.activeIndex){
-                    hideSlide("swiper-slide-prev");
-                    hideSlide("swiper-slide-next");
+                    hideSlide("swiper-cover", "swiper-slide-prev");
+                    hideSlide("swiper-cover", "swiper-slide-next");
                 }
 
             }
@@ -98,9 +100,19 @@ $(document).ready(function () {
 
             },
             onTransitionEnd: function(swiper){
+                console.log(">>"+swiper.activeIndex);
+                if(swiper.activeIndex == 1 || swiper.activeIndex == 3){
+                    showOnebyOne("swiper-vertical-slide-active");
+                }
 
             },
             onTransitionStart: function(swiper){
+                if(swiper.activeIndex == 1 || swiper.activeIndex == 3){
+                    hideSlide("swiper_vertical", "swiper-slide-prev");
+                    hideSlide("swiper_vertical", "swiper-vertical-slide-active");
+                    hideSlide("swiper_vertical", "swiper-slide-next");
+                }
+
 
             }
         });
@@ -108,7 +120,24 @@ $(document).ready(function () {
         var swiper_vertical = new Swiper ('.swiper_vertical', {
             noSwipingClass:"swiper-vertical-no-swiping",
             // Optional parameters
-            direction: 'vertical'
+            direction: 'vertical',
+            slideActiveClass:"swiper-vertical-slide-active",
+            onInit: function(swiper){
+
+            },
+            onTransitionEnd: function(swiper){
+
+                if(currentIndex_swiper_vertical != swiper.activeIndex){
+                    showOnebyOne("swiper-vertical-slide-active");
+                }
+                currentIndex_swiper_vertical = swiper.activeIndex;
+            },
+            onTransitionStart: function(swiper){
+                if(currentIndex_swiper_vertical != swiper.activeIndex){
+                    hideSlide("swiper_vertical", "swiper-slide-prev");
+                    hideSlide("swiper_vertical", "swiper-slide-next");
+                }
+            }
         });
         var swiper_scroll = new Swiper ('.swiper_scroll', {
             // Optional parameters
@@ -119,7 +148,6 @@ $(document).ready(function () {
             mousewheelControl: true,
             freeMode: true
         });
-
 
         var swiper_slide = new Swiper ('.swiper_slide', {
             effect:'fade',
@@ -188,9 +216,9 @@ $(document).ready(function () {
     }
 
 
-    function hideSlide(classString){
+    function hideSlide(parrentClassString, classString){
 
-        $('.' + classString).children().each(function(element){
+        $('.' + parrentClassString + ' .' + classString).children().each(function(element){
             if($(this).attr('animated-css')){
                 hideOpacity($(this));
                 $('.' + classString).css('z-index', '0');
@@ -198,7 +226,7 @@ $(document).ready(function () {
             }
         });
 
-        $('.' + classString + ' .animated-box').children().each(function(element){
+        $('.' + parrentClassString + ' .' + classString + ' .animated-box').children().each(function(element){
             if($(this).attr('animated-css')){
                 hideOpacity($(this));
                 $(this).removeClass('animated ' + $(this).attr('animated-css'));
@@ -215,7 +243,6 @@ $(document).ready(function () {
                     $(this).removeClass('animated ' + $(this).attr('animated-css'));
                 });
             }
-
         });
 
         $('.' + classString + ' .animated-box').children().each(function(element){
@@ -227,7 +254,6 @@ $(document).ready(function () {
                     $(this).removeClass('animated ' + $(this).attr('animated-css'));
                 });
             }
-
         });
     }
 });
