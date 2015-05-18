@@ -123,3 +123,7 @@ body {
 .swiper-container-fade .swiper-slide {
     pointer-events: all;
 }
+.full-width-bg{
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+}

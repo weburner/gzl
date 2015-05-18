@@ -15,205 +15,334 @@
     <link rel="stylesheet" href="app.css">
 
 </head>
-<body>
-<div id="loading" style="position:absolute;width: 64px;height: auto; top:44%; left: 50%;margin-left: -32px;text-align: center;">
-    <img src="imgs/Oval-100.jpg" >
-    <div><span loading-percent>12</span>%</div>
+<body style="background-color: #0a60af">
+
+<!-- Loading -->
+<div id="loading"
+     style="position:absolute;width: 64px;height: auto; top:44%; left: 50%;margin-left: -32px;text-align: center;">
+    <img src="imgs/01-01-icon.svg" class="full-width">
+
+    <div class="space-20"></div>
+    <div style="color: #ffffff"><span loading-percent>12</span>%</div>
 </div>
+
 <!-- Swiper -->
 <div class="full-width fix-top z-index-10">
-    <img src="imgs/ios7-volume-high.png" style="float: right; padding-top: 10px; padding-right: 10px;">
-    <img src="imgs/ios7-volume-high.png" style="float: right; padding-top: 10px; padding-right: 10px;">
-    <img src="imgs/H5.svg" style="float: left;padding-top: 20px;padding-left: 10px; display: none;" id="back_button">
+    <img src="imgs/sound-icon.svg"
+         style="float: right; padding-top: 10px; padding-right: 10px; width: 30px; height: auto">
+    <img src="imgs/tele-icon.svg"
+         style="float: right; padding-top: 10px; padding-right: 10px; width: 30px; height: auto">
+    <img src="imgs/back.svg"
+         style="float: left; padding-top: 10px; padding-left: 10px; width: 70px; height: auto; display: none;"
+         id="back_button">
 </div>
-<div class="swiper-container swiper-main swiper-main-no-swiping" id="main-content">
-    <div class="swiper-wrapper">
-        <div class="swiper-slide" style="background-image:url(imgs/bg-360.jpg)">
-            <div class="swiper-cover swiper-container swiper-no-swiping" id="cover">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <h1>cover 1</h1>
-                        <img src="imgs/Rectangle-140-60.jpg" class="delay-0" animated-css="fadeInDown">
-                        <div class="space-10"></div>
-                        <img src="imgs/Rectangle-180-45.jpg" class="delay-1" animated-css="fadeInDown">
-                        <div class="space-10"></div>
-                        <img src="imgs/Triangle-down.jpg" class="delay-2" animated-css="fadeInDown" id="play_button">
-                        <div class="space-20"></div>
-                        <img src="imgs/Oval-100.jpg" class="delay-3" animated-css="fadeInDown">
-                        <div class="full-width fix-bottom" class="delay-4" animated-css="fadeInDown">
-                            <img src="imgs/Rectangle-80-30.jpg">
-                            <div class="space-20"></div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide" style="background-image:url(imgs/bg-360.jpg)">
-                        <h1>cover 2</h1>
-                    </div>
-                    <div class="swiper-slide">
-                        <h1>cover 3</h1>
-                        <img src="imgs/bg-80.jpg" class="full-width fix-top delay-0" animated-css="fadeInDown">
-                        <img src="imgs/bg-80.jpg" class="full-width fix-bottom delay-4" animated-css="fadeInRight">
-                    </div>
-                    <div class="swiper-slide" style="background-image:url(imgs/bg-360.jpg)">
-                        <!-- Slider main container -->
-                        <div class="swiper-container swiper_slide" style="position: absolute;top: 0;z-index: -1;">
-                            <!-- Additional required wrapper -->
-                            <div class="swiper-wrapper">
-                                <!-- Slides -->
-                                <div class="swiper-slide" style="background-image:url(imgs/bg-360.jpg)">A</div>
-                                <div class="swiper-slide" style="background-image:url(imgs/bg-360-b.jpg)">B</div>
-                                <div class="swiper-slide" style="background-image:url(imgs/bg-360-c.jpg)">C</div>
-                            </div>
-                        </div>
-                        <h1>cover 4</h1>
-                        <div class="full-width fix-top animated-box">
 
-                            <div class="space-60"></div>
-                            <div class="full-width" style="height: 20px;" class="delay-4" animated-css="fadeInLeft">
-                                <img src="imgs/H5.svg" class="animated infinite bounce" style="float: left;padding-left: 10px;">
-                            </div>
-                            <div class="full-width animated-box">
-                                <img src="imgs/button-70-26.svg" style="width: 20%;" class="delay-0" animated-css="fadeIn" id="link_button_1">
-                                <img src="imgs/button-70-26.svg" style="width: 20%;" class="delay-1" animated-css="fadeIn" id="link_button_2">
-                                <img src="imgs/button-70-26.svg" style="width: 20%;" class="delay-2" animated-css="fadeIn" id="link_button_3">
-                                <img src="imgs/button-70-26.svg" style="width: 20%;" class="delay-3" animated-css="fadeIn" id="link_button_4">
-                            </div>
-                        </div>
-                    </div>
+<img src="imgs/back-to-top.svg" id="top_button" class="full-width fix-bottom z-index-10">
+
+<div class="swiper-container swiper-main swiper-main-no-swiping" id="main-content">
+
+<div class="swiper-wrapper">
+<div class="swiper-slide" style="background-image:url(imgs/bg-360.jpg)">
+    <div class="swiper-cover swiper-container swiper-no-swiping" id="cover">
+        <div class="swiper-wrapper">
+
+            <!-- Page 01-02 -->
+            <div class="swiper-slide" style="background-image: url('imgs/01-02-bg.jpg')">
+                <img src="imgs/01-02-logo-royal.svg" class="full-width delay-0" animated-css="fadeInDown">
+
+                <div class="space-10"></div>
+                <img src="imgs/01-02-slogan.svg" class="full-width delay-1" animated-css="fadeInDown">
+
+                <div class="space-10"></div>
+                <img src="imgs/01-02-btn.svg" class="full-width delay-2" animated-css="fadeInDown" id="play_button">
+
+                <div class="space-20"></div>
+                <img src="imgs/01-02-icon.svg" class="full-width delay-3" animated-css="fadeInDown">
+
+                <div class="full-width fix-bottom" class="delay-4" animated-css="fadeInDown">
+                    <img src="imgs/01-02-logo-gzl.svg" class="full-width">
                 </div>
             </div>
-        </div>
-        <div class="swiper-slide">
-            <div class="swiper_vertical swiper-container" id="page-1">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide" style="background-image:url(imgs/bg-360.jpg)">
-                        <h1>page 1-1</h1>
-                    </div>
-                    <div class="swiper-slide" style="background-image:url(imgs/bg-360.jpg)">
-                        <h1>page 1-2</h1>
-                    </div>
-                    <div class="swiper-slide" style="background-image:url(imgs/bg-360.jpg)">
-                        <h1>page 1-3</h1>
-                    </div>
-                    <div class="swiper-slide" style="background-image:url(imgs/bg-360.jpg)">
-                        <h1>page 1-4</h1>
-                    </div>
-                    <div class="swiper-slide" style="background-image:url(imgs/bg-360.jpg)">
-                        <h1>page 1-5</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="swiper-slide">
-            <div class="swiper-container" id="page-2">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide" style="background-image:url(imgs/bg-360.jpg)">
-                        <img src="imgs/button-70-26.svg" style="width: 20%;" class="delay-0" animated-css="fadeIn" id="link_button_5">
-                        <img src="imgs/button-70-26.svg" style="width: 20%;" class="delay-1" animated-css="fadeIn" id="link_button_6">
-                        <img src="imgs/button-70-26.svg" style="width: 20%;" class="delay-2" animated-css="fadeIn" id="link_button_7">
+
+            <!-- Page 01-03 -->
+            <div class="swiper-slide" style="background-image:url('imgs/01-03-bg.jpg')"></div>
+
+            <!-- Page 01-04 -->
+            <div class="swiper-slide delay-1" style="background-image: url('imgs/01-04-bg.jpg')"></div>
+
+            <!-- Page nav -->
+            <div class="swiper-slide" style="background-image:url('imgs/bg-360.jpg')">
+                <!-- Slider main container -->
+                <div class="swiper-container swiper_slide" style="position: absolute;top: 0;z-index: -3;">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide" style="background-image:url('imgs/01-04-bg.jpg')"></div>
+                        <div class="swiper-slide" style="background-image:url('imgs/01-06-bg.png')"></div>
+                        <div class="swiper-slide" style="background-image:url('imgs/01-07-bg.jpg')"></div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="swiper-slide">
-            <div class="swiper_vertical swiper-container" id="page-3">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide" style="background-image:url(imgs/bg-360.jpg)">
-                        <h1>page 3-1</h1>
+
+                <!-- Menu -->
+                <div class="full-width fix-top animated-box">
+                    <div class="space-60"></div>
+                    <div class="delay-4" animated-css="fadeInLeft">
+                        <img src="imgs/01-07-click.svg" class="full-width animated infinite bounce"
+                             style="float: left;">
                     </div>
-                    <div class="swiper-slide" style="background-image:url(imgs/bg-360.jpg)">
-                        <h1>page 3-2</h1>
-                    </div>
-                    <div class="swiper-slide" style="background-image:url(imgs/bg-360.jpg)">
-                        <h1>page 3-3</h1>
-                    </div>
-                    <div class="swiper-slide" style="background-image:url(imgs/bg-360.jpg)">
-                        <h1>page 3-4</h1>
-                    </div>
-                    <div class="swiper-slide" style="background-image:url(imgs/bg-360.jpg)">
-                        <h1>page 3-5</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="swiper-slide">
-            <div class="swiper-container" id="page-4">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide" style="background-image:url(imgs/bg-360.jpg)">
-                        <h1>page 4</h1>
+
+                    <div class="full-width animated-box">
+                        <img src="imgs/01-07-button1.svg" style="width: 22.5%;" class="delay-0" animated-css="fadeIn"
+                             id="link_button_1">
+                        <img src="imgs/01-07-button2.svg" style="width: 22.5%;" class="delay-1" animated-css="fadeIn"
+                             id="link_button_2">
+                        <img src="imgs/01-07-button3.svg" style="width: 22.5%;" class="delay-2" animated-css="fadeIn"
+                             id="link_button_3">
+                        <img src="imgs/01-07-button4.svg" style="width: 22.5%;" class="delay-3" animated-css="fadeIn"
+                             id="link_button_4">
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="swiper-slide swiper-vertical-no-swiping" style="background-image:url(imgs/bg-360.jpg)">
-            <div class="swiper-container swiper_scroll">
-                <!-- Additional required wrapper -->
-                <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <div class="swiper-scroll-slide">
-                        <div class="space-60"></div>
-                        <img src="imgs/Rectangle-140-60.jpg" class="full-width">
-                        <img src="imgs/Rectangle-140-60.jpg" class="full-width">
-                        <img src="imgs/Rectangle-140-60.jpg" class="full-width">
-                        <img src="imgs/Rectangle-140-60.jpg" class="full-width">
-                        <img src="imgs/Rectangle-140-60.jpg" class="full-width">
-                        <img src="imgs/Rectangle-140-60.jpg" class="full-width">
-                        <img src="imgs/Rectangle-140-60.jpg" class="full-width">
-                        <img src="imgs/Rectangle-140-60.jpg" class="full-width">
-                        <div class="space-60"></div>
-                        <img src="imgs/Oval-100.jpg" class="delay-3" animated-css="fadeInDown">
-                    </div>
+
+                <!-- Text -->
+                <div class="fix-top delay-4" style="z-index: -2">
+                    <img src="imgs/01-07-text.svg" class="full-width" animated-css="fadeInLeft">
                 </div>
-                <!-- Add Scroll Bar -->
-                <div class="swiper-scrollbar"></div>
-            </div>
-        </div>
-        <div class="swiper-slide swiper-vertical-no-swiping" style="background-image:url(imgs/bg-360.jpg)">
-            <div class="swiper-container swiper_scroll">
-                <!-- Additional required wrapper -->
-                <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <div class="swiper-scroll-slide">
-                        <div class="space-60"></div>
-                        <img src="imgs/Rectangle-140-60.jpg" class="full-width">
-                        <img src="imgs/Rectangle-140-60.jpg" class="full-width">
-                        <img src="imgs/Rectangle-140-60.jpg" class="full-width">
-                        <img src="imgs/Rectangle-140-60.jpg" class="full-width">
-                        <img src="imgs/Rectangle-140-60.jpg" class="full-width">
-                        <img src="imgs/Rectangle-140-60.jpg" class="full-width">
-                        <img src="imgs/Rectangle-140-60.jpg" class="full-width">
-                        <img src="imgs/Rectangle-140-60.jpg" class="full-width">
-                        <div class="space-60"></div>
-                        <img src="imgs/Oval-100.jpg" class="delay-3" animated-css="fadeInDown">
-                    </div>
-                </div>
-                <!-- Add Scroll Bar -->
-                <div class="swiper-scrollbar"></div>
-            </div>
-        </div>
-        <div class="swiper-slide swiper-vertical-no-swiping" style="background-image:url(imgs/bg-360.jpg)">
-            <div class="swiper-container swiper_scroll">
-                <!-- Additional required wrapper -->
-                <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <div class="swiper-scroll-slide">
-                        <div class="space-60"></div>
-                        <img src="imgs/Rectangle-140-60.jpg" class="full-width">
-                        <img src="imgs/Rectangle-140-60.jpg" class="full-width">
-                        <img src="imgs/Rectangle-140-60.jpg" class="full-width">
-                        <img src="imgs/Rectangle-140-60.jpg" class="full-width">
-                        <img src="imgs/Rectangle-140-60.jpg" class="full-width">
-                        <img src="imgs/Rectangle-140-60.jpg" class="full-width">
-                        <img src="imgs/Rectangle-140-60.jpg" class="full-width">
-                        <img src="imgs/Rectangle-140-60.jpg" class="full-width">
-                        <div class="space-60"></div>
-                        <img src="imgs/Oval-100.jpg" class="delay-3" animated-css="fadeInDown">
-                    </div>
-                </div>
-                <!-- Add Scroll Bar -->
-                <div class="swiper-scrollbar"></div>
+
             </div>
         </div>
     </div>
+</div>
+
+<div class="swiper-slide">
+    <div class="swiper_vertical swiper-container" id="page-1">
+        <div class="swiper-wrapper">
+
+            <!-- Page 02-01 -->
+            <div class="swiper-slide" style="background-image:url('imgs/02-01-bg.jpg')">
+                <img src="imgs/02-01-head.svg" class="z-index-10 full-width fix-bottom delay-1"
+                     animated-css="fadeInLeft">
+                <img src="imgs/02-01-text.svg" class="full-width fix-bottom delay-2" animated-css="fadeInRight">
+            </div>
+
+            <!-- Page 02-02 -->
+            <div class="swiper-slide" style="background-image:url('imgs/02-02-bg.jpg')">
+                <img src="imgs/02-02-head.svg" class="z-index-10 full-width fix-bottom">
+                <img src="imgs/02-02-text.svg" class="full-width fix-bottom">
+            </div>
+
+            <!-- Page 02-03 -->
+            <div class="swiper-slide" style="background-image:url('imgs/02-03-bg.jpg')">
+                <img src="imgs/02-03-head.svg" class="z-index-10 full-width fix-bottom">
+                <img src="imgs/02-03-text.svg" class="full-width fix-bottom">
+            </div>
+
+            <!-- Page 02-04 -->
+            <div class="swiper-slide" style="background-image:url('imgs/02-04-bg.jpg')">
+                <img src="imgs/02-04-head.svg" class="z-index-10 full-width fix-bottom">
+                <img src="imgs/02-04-text.svg" class="full-width fix-bottom">
+            </div>
+
+            <!-- Page 02-05 -->
+            <div class="swiper-slide" style="background-image:url('imgs/02-05-bg.jpg')">
+                <img src="imgs/02-05-head.svg" class="z-index-10 full-width fix-bottom">
+                <img src="imgs/02-05-text.svg" class="full-width fix-bottom">
+            </div>
+
+            <!-- Page 02-06 -->
+            <div class="swiper-slide" style="background-image:url('imgs/02-06-bg.jpg')">
+                <img src="imgs/02-06-head.svg" class="z-index-10 full-width fix-bottom">
+                <img src="imgs/02-06-text.svg" class="full-width fix-bottom">
+            </div>
+
+            <!-- Page 02-07 -->
+            <div class="swiper-slide" style="background-image:url('imgs/02-07-bg.jpg')">
+                <img src="imgs/02-07-head.svg" class="z-index-10 full-width fix-bottom">
+                <img src="imgs/02-07-text.svg" class="full-width fix-bottom">
+            </div>
+
+            <!-- Page 02-08 -->
+            <div class="swiper-slide" style="background-image:url('imgs/02-08-bg.jpg')">
+                <img src="imgs/02-08-head.svg" class="z-index-10 full-width fix-bottom">
+                <img src="imgs/02-08-text.svg" class="full-width fix-bottom">
+            </div>
+
+            <!-- Page 02-09 -->
+            <div class="swiper-slide" style="background-image:url('imgs/02-09-bg.jpg')">
+                <img src="imgs/02-09-head.svg" class="z-index-10 full-width fix-bottom">
+                <img src="imgs/02-09-text.svg" class="full-width fix-bottom">
+            </div>
+
+            <!-- Page 02-10 -->
+            <div class="swiper-slide" style="background-image:url('imgs/02-10-bg.jpg')">
+                <img src="imgs/02-10-head.svg" class="z-index-10 full-width fix-bottom">
+                <img src="imgs/02-10-text.svg" class="full-width fix-bottom">
+            </div>
+
+            <!-- Page 02-11 -->
+            <div class="swiper-slide" style="background-image:url('imgs/02-11-bg.jpg')">
+                <div style="margin-top: -190px">
+                    <img src="imgs/02-11-text1.svg" class="full-width">
+                    <img src="imgs/02-11-logo.svg" class="full-width">
+                    <img src="imgs/02-11-text2.svg" class="full-width">
+                </div>
+                <img src="imgs/02-11-button.svg" class="full-width fix-bottom">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Page 03-01 Lines Nav-->
+<div class="swiper-slide">
+    <div class="swiper-container" id="page-2">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-image:url('imgs/03-01-bg.jpg')">
+
+                <img src="imgs/03-01-link1.svg" class="fix-bottom full-width delay-0" animated-css="fadeIn">
+                <img src="imgs/03-01-link2.svg" class="fix-bottom full-width delay-1" animated-css="fadeIn">
+                <img src="imgs/03-01-link3.svg" class="fix-bottom full-width delay-2" animated-css="fadeIn">
+                <img src="imgs/03-01-boat.svg" class="fix-bottom full-width delay-2" animated-css="fadeIn">
+
+                <div style="z-index: -2">
+                    <img src="imgs/03-01-line1.svg" class="fix-bottom full-width delay-2" animated-css="fadeIn">
+                    <img src="imgs/03-01-line2.svg" class="fix-bottom full-width delay-2" animated-css="fadeIn">
+                    <img src="imgs/03-01-line3.svg" class="fix-bottom full-width delay-2" animated-css="fadeIn">
+                </div>
+
+                <img src="imgs/03-01-head.svg" class="fix-top full-width delay-2" animated-css="fadeIn">
+                <img src="imgs/03-01-text.svg" class="fix-top full-width delay-2" animated-css="fadeIn">
+
+                <div class="full-width" style="height: 25%;"></div>
+                <div class="full-width" style="height: 25%;" id="link_button_5"></div>
+                <div class="full-width" style="height: 25%;" id="link_button_6"></div>
+                <div class="full-width" style="height: 25%;" id="link_button_7"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Ship Intro-->
+<div class="swiper-slide">
+    <div class="swiper_vertical swiper-container" id="page-3">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-image:url(imgs/bg-360.jpg)">
+                <h1>page 3-1</h1>
+            </div>
+            <div class="swiper-slide" style="background-image:url(imgs/bg-360.jpg)">
+                <h1>page 3-2</h1>
+            </div>
+            <div class="swiper-slide" style="background-image:url(imgs/bg-360.jpg)">
+                <h1>page 3-3</h1>
+            </div>
+            <div class="swiper-slide" style="background-image:url(imgs/bg-360.jpg)">
+                <h1>page 3-4</h1>
+            </div>
+            <div class="swiper-slide" style="background-image:url(imgs/bg-360.jpg)">
+                <h1>page 3-5</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Page Call -->
+<div class="swiper-slide">
+    <div class="swiper-container" id="page-4">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-image:url(imgs/bg-360.jpg)">
+                <h1>page 4</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Page 03 Line2 -->
+<div class="swiper-slide swiper-vertical-no-swiping" style="background-image:url('imgs/03-05-bg.jpg')">
+    <div class="swiper-container swiper_scroll">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-scroll-slide">
+                <div class="space-40"></div>
+                <img src="imgs/03-05-head.svg" class="full-width">
+                <img src="imgs/Rectangle-140-60.jpg" class="full-width">
+                <img src="imgs/Rectangle-140-60.jpg" class="full-width">
+                <img src="imgs/Rectangle-140-60.jpg" class="full-width">
+                <img src="imgs/Rectangle-140-60.jpg" class="full-width">
+                <img src="imgs/Rectangle-140-60.jpg" class="full-width">
+                <img src="imgs/Rectangle-140-60.jpg" class="full-width">
+                <img src="imgs/Rectangle-140-60.jpg" class="full-width">
+
+                <div class="space-60"></div>
+                <img src="imgs/Oval-100.jpg" class="delay-3" animated-css="fadeInDown">
+            </div>
+        </div>
+        <!-- Add Scroll Bar -->
+        <div class="swiper-scrollbar"></div>
+    </div>
+</div>
+
+
+<div class="swiper-slide swiper-vertical-no-swiping" style="background-image:url(imgs/bg-360.jpg)">
+    <div class="swiper-container swiper_scroll">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-scroll-slide">
+                <div class="space-60"></div>
+                <img src="imgs/Rectangle-140-60.jpg" class="full-width">
+                <img src="imgs/Rectangle-140-60.jpg" class="full-width">
+                <img src="imgs/Rectangle-140-60.jpg" class="full-width">
+                <img src="imgs/Rectangle-140-60.jpg" class="full-width">
+                <img src="imgs/Rectangle-140-60.jpg" class="full-width">
+                <img src="imgs/Rectangle-140-60.jpg" class="full-width">
+                <img src="imgs/Rectangle-140-60.jpg" class="full-width">
+                <img src="imgs/Rectangle-140-60.jpg" class="full-width">
+
+                <div class="space-60"></div>
+                <img src="imgs/Oval-100.jpg" class="delay-3" animated-css="fadeInDown">
+            </div>
+        </div>
+        <!-- Add Scroll Bar -->
+        <div class="swiper-scrollbar"></div>
+    </div>
+</div>
+
+<!-- Page 03 Line1 -->
+<div class="swiper-slide swiper-vertical-no-swiping" style="background-image:url('imgs/03-02-bg.jpg')">
+    <div class="swiper-container swiper_scroll">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-scroll-slide" style="padding-left: 0; padding-right: 0">
+                <div class="space-40"></div>
+                <img src="imgs/03-02-head.svg" class="full-width">
+                <div class="space-30"></div>
+
+                <div class="full-width-bg" style="background-image: url(imgs/03-02-1-pic.png);">
+                    <img src="imgs/03-02-1-text.svg" class="full-width">
+                </div>
+
+                <img src="imgs/03-02-2-pic.png" class="full-width">
+                <img src="imgs/03-02-2-text.svg" class="full-width">
+
+                <img src="imgs/03-03-3-pic.png" class="full-width">
+                <img src="imgs/03-03-3-text.svg" class="full-width">
+
+                <img src="imgs/03-03-4-pic.png" class="full-width">
+                <img src="imgs/03-03-4-text.svg" class="full-width">
+
+                <div class="space-60"></div>
+                <img src="imgs/03-04-button.svg" class="full-width delay-3" animated-css="fadeInDown">
+                <div class="space-60"></div>
+
+                <img src="imgs/02-11-logo.svg" class="full-width delay-3" animated-css="fadeInDown">
+                <div class="space-60"></div>
+            </div>
+        </div>
+        <!-- Add Scroll Bar -->
+        <div class="swiper-scrollbar"></div>
+    </div>
+</div>
+</div>
 </div>
 
 <!-- Swiper JS -->
