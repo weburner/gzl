@@ -14,6 +14,36 @@
     <!-- App CSS -->
     <link rel="stylesheet" href="app.css">
 
+    <style>
+
+        video {
+            width: 100% !important;
+            height: auto !important;
+            margin-bottom: -6px;
+            position: absolute;
+            bottom: -1000px;
+        }
+
+        .video-box {
+            height: 100% !important;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #video-play-button {
+            position: absolute;
+            top: 0;
+            left: -1px;
+            right: 0;
+            bottom: 0;
+            z-index: 100;
+            background-image: url('imgs/04-01-bg.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+    </style>
 </head>
 <body style="background-color: #0a60af">
 
@@ -92,16 +122,18 @@
                     </div>
 
                     <div class="full-width animated-box">
-                        <img src="imgs/01-07-button1.svg" style="width: 22.5%;" class="delay-0" animated-css="fadeIn"
+                        <img src="imgs/01-07-button1.svg" style="width: 22.8%;" class="delay-0" animated-css="fadeIn"
                              id="link_button_1">
-                        <img src="imgs/01-07-button2.svg" style="width: 22.5%;" class="delay-1" animated-css="fadeIn"
+                        <img src="imgs/01-07-button2.svg" style="width: 22.8%;" class="delay-1" animated-css="fadeIn"
                              id="link_button_2">
-                        <img src="imgs/01-07-button3.svg" style="width: 22.5%;" class="delay-2" animated-css="fadeIn"
+                        <img src="imgs/01-07-button3.svg" style="width: 22.8%;" class="delay-2" animated-css="fadeIn"
                              id="link_button_3">
-                        <img src="imgs/01-07-button4.svg" style="width: 22.5%;" class="delay-3" animated-css="fadeIn"
+                        <img src="imgs/01-07-button4.svg" style="width: 22.8%;" class="delay-3" animated-css="fadeIn"
                              id="link_button_4">
                     </div>
                 </div>
+
+                <div class="space-60"></div>
 
                 <!-- Text -->
                 <div class="fix-top delay-4" style="z-index: -2">
@@ -232,32 +264,51 @@
                 <img src="imgs/04-01-play.svg" style="width: 65px; height: auto; margin-top: 50px">
             </div>
 
+            <!-- Video Play Test-->
+            <div class="swiper-slide video-box">
+                <div id="video-play-button" ng-click="playPause();"></div>
+                <video autoplay="false" id="video">
+                    <!-- MP4 must be first for iPad! -->
+                    <source src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" type="video/mp4">
+                    <!-- Safari / iOS, IE9 -->
+                    <source src="http://clips.vorwaerts-gmbh.de/VfE.webm" type="video/webm">
+                    <!-- Chrome10+, Ffx4+, Opera10.6+ -->
+                    <source src="http://clips.vorwaerts-gmbh.de/VfE.ogv" type="video/ogg">
+                    <!-- Firefox3.6+ / Opera 10.5+ -->
+                </video>
+            </div>
+
             <!-- Page 04-03 -->
             <div class="swiper-slide" style="background-image:url('imgs/04-03-bg.jpg')">
                 <div class="full-width fix-top animated-box">
                     <div class="space-60"></div>
 
                     <div animated-css="fadeInLeft">
-                        <img src="imgs/04-03-head.svg" class="full-width" style="float: left;">
+                        <img src="imgs/04-03-head.svg" class="full-width fix-top">
                     </div>
 
-                    <!--<div class="delay-4" animated-css="fadeInRight">-->
-                        <!--<img src="imgs/04-03-click.svg" class="full-width animated infinite bounce" style="float: left;">-->
-                    <!--</div>-->
+                    <div class="delay-5" animated-css="fadeInRight">
+                        <img src="imgs/04-03-click.svg" class="full-width animated infinite bounce"
+                             style="float: left;">
+                    </div>
 
                     <div class="full-width animated-box">
-                        <img src="imgs/04-03-icon1.png" style="width: 18.5%;" class="delay-0" animated-css="fadeIn"
+                        <img src="imgs/04-03-icon1.png" style="width: 18.5%;" class="delay-1" animated-css="fadeIn"
                              id="link_button_8">
-                        <img src="imgs/04-03-icon2.png" style="width: 18.5%;" class="delay-1" animated-css="fadeIn"
+                        <img src="imgs/04-03-icon2.png" style="width: 18.5%;" class="delay-2" animated-css="fadeIn"
                              id="link_button_9">
-                        <img src="imgs/04-03-icon3.png" style="width: 18.5%;" class="delay-2" animated-css="fadeIn"
+                        <img src="imgs/04-03-icon3.png" style="width: 18.5%;" class="delay-3" animated-css="fadeIn"
                              id="link_button_10">
-                        <img src="imgs/04-03-icon4.png" style="width: 18.5%;" class="delay-3" animated-css="fadeIn"
+                        <img src="imgs/04-03-icon4.png" style="width: 18.5%;" class="delay-4" animated-css="fadeIn"
                              id="link_button_11">
-                        <img src="imgs/04-03-icon5.png" style="width: 18.5%;" class="delay-4" animated-css="fadeIn"
+                        <img src="imgs/04-03-icon5.png" style="width: 18.5%;" class="delay-5" animated-css="fadeIn"
                              id="link_button_12">
                     </div>
                 </div>
+
+                <img src="imgs/04-03-title.svg" class="full-width fix-bottom delay-6" animated-css="fadeInLeft">
+                <img src="imgs/04-03-text.svg" class="full-width fix-bottom delay-7" animated-css="fadeInLeft">
+
             </div>
 
             <!-- Page 04-04 -->
@@ -366,6 +417,7 @@
 <div class="swiper-slide">
     <div class="swiper-container" id="page-4">
         <div class="swiper-wrapper">
+
             <div class="swiper-slide" style="background-image:url('imgs/05-01-bg.jpg')">
                 <img src="imgs/05-01-head.svg" class="full-width delay-0" animated-css="fadeInDown">
                 <img src="imgs/05-01-text.svg" class="full-width delay-1" animated-css="fadeInDown">
@@ -376,11 +428,11 @@
                 <div class="space-10"></div>
                 <img src="imgs/05-01-booking.svg" class="full-width delay-3" animated-css="fadeInDown">
 
-                <div class="space-60"></div>
+                <div class="space-40"></div>
 
                 <img src="imgs/logos.svg" class="full-width delay-4" animated-css="fadeInDown">
-
             </div>
+
         </div>
     </div>
 </div>
