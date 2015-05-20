@@ -68,7 +68,7 @@ $(document).ready(function () {
                 crossFade: false
             },
             slideActiveClass:"swiper-page-slide-active",
-            autoplay:2500,
+            autoplay:1500,
             onInit: function(swiper){
                 showOnebyOne("swiper-page-slide-active");
                 swiper.stopAutoplay();
@@ -97,10 +97,10 @@ $(document).ready(function () {
             noSwipingClass:"swiper-main-no-swiping",
             // Optional parameters
             onInit: function(swiper){
+                console.log(swiper);
 
             },
             onTransitionEnd: function(swiper){
-                console.log(">>"+swiper.activeIndex);
                 if(swiper.activeIndex == 1 || swiper.activeIndex == 3){
                     showOnebyOne("swiper-vertical-slide-active");
                 }
@@ -123,7 +123,10 @@ $(document).ready(function () {
             direction: 'vertical',
             slideActiveClass:"swiper-vertical-slide-active",
             onInit: function(swiper){
+                $('.back_to_top_button').on('click', function(e){
+                    swiper.slideTo(0);
 
+                });
             },
             onTransitionEnd: function(swiper){
 
@@ -146,7 +149,13 @@ $(document).ready(function () {
             direction: 'vertical',
             slidesPerView: 'auto',
             mousewheelControl: true,
-            freeMode: true
+            freeMode: true,
+            onInit: function(swiper){
+                $('.back_to_scroll_top_button').on('click', function(e){
+                    swiper.setWrapperTranslate(0);
+
+                });
+            }
         });
 
         var swiper_slide = new Swiper ('.swiper_slide', {
@@ -156,11 +165,20 @@ $(document).ready(function () {
 
     }
     function initLink(){
-        $('#play_button').on('click', function(e){
+        $('#video_play_button').on('click', function(e){
+            var myVideo = document.getElementById("video");
+            console.log("hihi");
+            if (myVideo.paused)
+                myVideo.play();
+            else
+                myVideo.pause();
+        });
+        $('.play_button').on('click', function(e){
             swiper_cover.slideNext(true, 1000);
             swiper_cover.startAutoplay();
 
         });
+
         $('#link_button_1').on('click', function(e){
             $('#back_button').show();
             swiper_main.slideTo(1);
