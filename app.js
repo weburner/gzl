@@ -25,9 +25,6 @@ $(document).ready(function () {
 
         preload.installPlugin(plugin);
         preload.loadManifest([
-            "01-01-icon.svg",
-            "01-02-logo-royal.svg",
-            "01-02-slogan.svg"
 
         ]);
         preload.on("complete", handleComplete);
