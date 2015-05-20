@@ -24,12 +24,7 @@ $(document).ready(function () {
         };
 
         preload.installPlugin(plugin);
-        preload.loadManifest([
-            "01-01-icon.svg",
-            "01-02-logo-royal.svg",
-            "01-02-slogan.svg"
 
-        ]);
         preload.on("complete", handleComplete);
 
     }
@@ -37,7 +32,7 @@ $(document).ready(function () {
     function handleComplete(event) {
         overLoading();
     }
-    init();
+    overLoading();
 
 
     function overLoading(){
@@ -154,7 +149,7 @@ $(document).ready(function () {
             mousewheelControl: true,
             freeMode: true,
             onInit: function(swiper){
-                $('.back_to_scroll_top_button').on('click', function(e){
+                $('.scroll_top').on('click', function(e){
                     swiper.setWrapperTranslate(0);
 
                 });
