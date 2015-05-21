@@ -68,11 +68,10 @@
 </div>
 
 
-
 <div class="swiper-container swiper-main swiper-main-no-swiping" id="main-content">
 
 <div class="swiper-wrapper">
-<div class="swiper-slide" style="background-image:url(imgs/bg-360.jpg)">
+<div class="swiper-slide">
     <div class="swiper-cover swiper-container swiper-no-swiping" id="cover">
         <div class="swiper-wrapper">
 
@@ -85,7 +84,7 @@
 
                 <div class="space-10"></div>
                 <div class="play_button delay-2" animated-css="fadeInDown">
-                    <img class="full-width animated infinite bounce" src="imgs/01-02-btn.svg" >
+                    <img class="full-width animated infinite bounce" src="imgs/01-02-btn.svg">
                 </div>
 
 
@@ -127,11 +126,14 @@
                     <div class="full-width animated-box">
                         <img src="imgs/01-07-button1.svg" style="width: 22.8%;" class="delay-0" animated-css="fadeIn"
                              id="link_button_1">
-                        <img src="imgs/01-07-button2.svg" style="width: 22.8%; margin-left: -2%;" class="delay-1" animated-css="fadeIn"
+                        <img src="imgs/01-07-button2.svg" style="width: 22.8%; margin-left: -2%;" class="delay-1"
+                             animated-css="fadeIn"
                              id="link_button_2">
-                        <img src="imgs/01-07-button3.svg" style="width: 22.8%; margin-left: -2%;" class="delay-2" animated-css="fadeIn"
+                        <img src="imgs/01-07-button3.svg" style="width: 22.8%; margin-left: -2%;" class="delay-2"
+                             animated-css="fadeIn"
                              id="link_button_3">
-                        <img src="imgs/01-07-button4.svg" style="width: 22.8%; margin-left: -2%;" class="delay-3" animated-css="fadeIn"
+                        <img src="imgs/01-07-button4.svg" style="width: 22.8%; margin-left: -2%;" class="delay-3"
+                             animated-css="fadeIn"
                              id="link_button_4">
                     </div>
                 </div>
@@ -227,9 +229,11 @@
 
                 <img src="imgs/02-11-text1.svg" class="full-width delay-1" animated-css="fadeInDown">
                 <img src="imgs/02-11-logo.svg" class="full-width delay-2" animated-css="fadeInDown">
-                <img src="imgs/02-11-text2.svg" class="full-width delay-3" animated-css="fadeInDown">
+                <img src="imgs/02-11-text2.svg" class="full-width delay-3" animated-css="fadeInDown"
+                     style="margin-bottom: 180px;">
 
-                <img src="imgs/02-11-button.svg" class="back_to_top_button full-width fix-bottom delay-4" animated-css="fadeInUp">
+                <img src="imgs/02-11-button.svg" class="back_to_top_button full-width fix-bottom delay-4"
+                     animated-css="fadeInUp">
             </div>
         </div>
     </div>
@@ -252,8 +256,11 @@
                     <img src="imgs/03-01-line3.svg" class="fix-bottom full-width delay-2" animated-css="fadeIn">
                 </div>
 
-                <img src="imgs/03-01-head.svg" class="fix-top full-width delay-2" animated-css="fadeIn">
-                <img src="imgs/03-01-text.svg" class="fix-top full-width delay-2" animated-css="fadeIn">
+                <div class="fix-top">
+                    <div class="space-40"></div>
+                    <img src="imgs/03-01-head.svg" class="full-width" animated-css="fadeInLeft">
+                    <img src="imgs/03-01-text.svg" class="full-width" animated-css="fadeInLeft">
+                </div>
 
                 <div class="full-width" style="height: 25%;"></div>
                 <div class="full-width" style="height: 25%;" id="link_button_5"></div>
@@ -271,27 +278,27 @@
             <!-- Page 04-01 Ship Intro-->
             <div class="swiper-slide" style="background-image:url('imgs/04-01-bg.jpg')">
 
-                <div class="fix-top">
-                    <div class="space-60"></div>
-                    <img src="imgs/04-01-head.svg" class="full-width">
-                    <img src="imgs/04-01-text.svg" class="full-width">
-                    <div style="position: relative;">
-                        <img src="imgs/04-01-video.svg" class="full-width">
-                        <img src="imgs/04-01-play.svg" class="full-width" style="width: 65px; height: auto;" id="video_play_button">
-                    </div>
-                    <video id="video">
-                        <!-- MP4 must be first for iPad! -->
-                        <source src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" type="video/mp4">
-                        <!-- Safari / iOS, IE9 -->
-                        <source src="http://clips.vorwaerts-gmbh.de/VfE.webm" type="video/webm">
-                        <!-- Chrome10+, Ffx4+, Opera10.6+ -->
-                        <source src="http://clips.vorwaerts-gmbh.de/VfE.ogv" type="video/ogg">
-                        <!-- Firefox3.6+ / Opera 10.5+ -->
-                    </video>
-                </div>
+                <img src="imgs/04-01-head.svg" class="full-width delay-0" animated-css="fadeInLeft"
+                     style="margin-top: -120px">
+                <img src="imgs/04-01-text.svg" class="full-width delay-1" animated-css="fadeInLeft">
+
+                <div class="space-20"></div>
+                <img src="imgs/04-01-video.svg" class="full-width delay-2" animated-css="fadeInLeft">
+                <img src="imgs/04-01-play.svg" class="full-width delay-3"
+                     style="width: 65px; height: auto; margin-top: -45px" id="video_play_button"
+                     animated-css="zoomIn">
+
+                <video id="video">
+                    <!-- MP4 must be first for iPad! -->
+                    <source src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" type="video/mp4">
+                    <!-- Safari / iOS, IE9 -->
+                    <source src="http://clips.vorwaerts-gmbh.de/VfE.webm" type="video/webm">
+                    <!-- Chrome10+, Ffx4+, Opera10.6+ -->
+                    <source src="http://clips.vorwaerts-gmbh.de/VfE.ogv" type="video/ogg">
+                    <!-- Firefox3.6+ / Opera 10.5+ -->
+                </video>
 
             </div>
-
 
 
             <!-- Page 04-03 -->
@@ -299,11 +306,9 @@
                 <div class="full-width fix-top animated-box">
                     <div class="space-60"></div>
 
-                    <div animated-css="fadeInLeft">
-                        <img src="imgs/04-03-head.svg" class="full-width">
-                    </div>
+                    <img src="imgs/04-03-head.svg" class="full-width" animated-css="fadeInLeft">
 
-                    <div class="delay-5" animated-css="fadeInRight">
+                    <div class="delay-5" animated-css="fadeInRight" style="margin-top: -40px;">
                         <img src="imgs/04-03-click.svg" class="full-width animated infinite bounce"
                              style="float: left;">
                     </div>
@@ -418,11 +423,13 @@
             <!-- Page 02-11 Ending Page-->
             <div class="swiper-slide" style="background-image:url('imgs/02-11-bg.jpg')">
 
-                <img src="imgs/02-11-text1.svg" class="full-width fix-top delay-1" animated-css="fadeInDown">
-                <img src="imgs/02-11-logo.svg" class="full-width fix-top delay-2" animated-css="fadeInDown">
-                <img src="imgs/02-11-text2.svg" class="full-width fix-top delay-3" animated-css="fadeInDown">
+                <img src="imgs/02-11-text1.svg" class="full-width delay-1" animated-css="fadeInDown">
+                <img src="imgs/02-11-logo.svg" class="full-width delay-2" animated-css="fadeInDown">
+                <img src="imgs/02-11-text2.svg" class="full-width delay-3" animated-css="fadeInDown"
+                     style="margin-bottom: 180px;">
 
-                <img src="imgs/02-11-button.svg" class="back_to_top_button full-width fix-bottom delay-4" animated-css="fadeInDown">
+                <img src="imgs/02-11-button.svg" class="back_to_top_button full-width fix-bottom delay-4"
+                     animated-css="fadeInUp">
             </div>
 
         </div>
@@ -446,7 +453,7 @@
 
                 <div class="space-40"></div>
 
-                <img src="imgs/logos.svg" class="full-width delay-4" animated-css="fadeInDown">
+                <img src="imgs/logos.svg" class="full-width delay-4" animated-css="fadeInUp">
             </div>
 
         </div>
