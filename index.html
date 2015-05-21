@@ -60,8 +60,10 @@
 <div class="full-width fix-top z-index-10">
     <img src="imgs/sound-icon.svg"
          style="float: right; padding-top: 10px; padding-right: 10px; width: 30px; height: auto">
-    <img src="imgs/tele-icon.svg"
-         style="float: right; padding-top: 10px; padding-right: 10px; width: 30px; height: auto">
+    <a href="tel:4008638888">
+        <img src="imgs/tele-icon.svg"
+             style="float: right; padding-top: 10px; padding-right: 10px; width: 30px; height: auto">
+    </a>
     <img src="imgs/back.svg"
          style="float: left; padding-top: 10px; padding-left: 10px; width: 70px; height: auto; display: none;"
          id="back_button">
@@ -242,21 +244,21 @@
 <!-- Page 03-01 Lines Nav-->
 <div class="swiper-slide">
     <div class="swiper-container" id="page-2">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide" style="background-image:url('imgs/03-01-bg.jpg')">
+        <div class="swiper-wrapper swiper-one-page-wapper">
+            <div class="swiper-slide swiper-one-page" style="background-image:url('imgs/03-01-bg.jpg')">
 
-                <img src="imgs/03-01-link1.svg" class="fix-bottom full-width delay-0" animated-css="fadeIn">
-                <img src="imgs/03-01-link2.svg" class="fix-bottom full-width delay-1" animated-css="fadeIn">
+                <img src="imgs/03-01-link1.svg" class="fix-bottom full-width delay-2" animated-css="fadeIn">
+                <img src="imgs/03-01-link2.svg" class="fix-bottom full-width delay-2" animated-css="fadeIn">
                 <img src="imgs/03-01-link3.svg" class="fix-bottom full-width delay-2" animated-css="fadeIn">
                 <img src="imgs/03-01-boat.svg" class="fix-bottom full-width delay-2" animated-css="fadeIn">
 
-                <div style="z-index: -2">
+                <div class="animated-box" style="z-index: -2">
                     <img src="imgs/03-01-line1.svg" class="fix-bottom full-width delay-2" animated-css="fadeIn">
                     <img src="imgs/03-01-line2.svg" class="fix-bottom full-width delay-2" animated-css="fadeIn">
                     <img src="imgs/03-01-line3.svg" class="fix-bottom full-width delay-2" animated-css="fadeIn">
                 </div>
 
-                <div class="fix-top">
+                <div class="fix-top animated-box">
                     <div class="space-40"></div>
                     <img src="imgs/03-01-head.svg" class="full-width" animated-css="fadeInLeft">
                     <img src="imgs/03-01-text.svg" class="full-width" animated-css="fadeInLeft">
@@ -290,12 +292,8 @@
 
                 <video id="video">
                     <!-- MP4 must be first for iPad! -->
-                    <source src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" type="video/mp4">
+                    <source src="imgs/movie-out.mp4" type="video/mp4">
                     <!-- Safari / iOS, IE9 -->
-                    <source src="http://clips.vorwaerts-gmbh.de/VfE.webm" type="video/webm">
-                    <!-- Chrome10+, Ffx4+, Opera10.6+ -->
-                    <source src="http://clips.vorwaerts-gmbh.de/VfE.ogv" type="video/ogg">
-                    <!-- Firefox3.6+ / Opera 10.5+ -->
                 </video>
 
                 <img src="imgs/back-to-top.svg" class="infinite animated bounce full-width fix-bottom z-index-10">
@@ -453,14 +451,17 @@
 <!-- Page 05-01 Call -->
 <div class="swiper-slide">
     <div class="swiper-container" id="page-4">
-        <div class="swiper-wrapper">
+        <div class="swiper-wrapper swiper-one-page-wapper">
 
-            <div class="swiper-slide" style="background-image:url('imgs/05-01-bg.jpg')">
+            <div class="swiper-slide swiper-one-page" style="background-image:url('imgs/05-01-bg.jpg')">
                 <img src="imgs/05-01-head.svg" class="full-width delay-0" animated-css="fadeInDown">
                 <img src="imgs/05-01-text.svg" class="full-width delay-1" animated-css="fadeInDown">
 
                 <div class="space-20"></div>
-                <img src="imgs/05-01-icon.svg" class="full-width delay-2" animated-css="fadeInDown">
+
+                <a href="tel:4008638888" class="delay-2" animated-css="fadeInDown">
+                    <img src="imgs/05-01-icon.svg" class="full-width">
+                </a>
 
                 <div class="space-10"></div>
                 <img src="imgs/05-01-booking.svg" class="full-width delay-3" animated-css="fadeInDown">

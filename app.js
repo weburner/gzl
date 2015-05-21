@@ -102,6 +102,10 @@ $(document).ready(function () {
                 if(swiper.activeIndex == 1 || swiper.activeIndex == 3){
                     showOnebyOne("swiper-vertical-slide-active");
                 }
+                else{
+                    showOnebyOne("swiper-one-page");
+                }
+
 
             },
             onTransitionStart: function(swiper){
@@ -110,10 +114,15 @@ $(document).ready(function () {
                     hideSlide("swiper_vertical", "swiper-vertical-slide-active");
                     hideSlide("swiper_vertical", "swiper-slide-next");
                 }
+                else
+                {
+                    hideSlide("swiper-one-page-wapper", "swiper-one-page");
+                }
 
 
             }
         });
+
 
         var swiper_vertical = new Swiper ('.swiper_vertical', {
             noSwipingClass:"swiper-vertical-no-swiping",

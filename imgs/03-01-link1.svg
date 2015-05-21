@@ -3,7 +3,83 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="640px" height="750px" viewBox="0 0 640 750" enable-background="new 0 0 640 750" xml:space="preserve">
-<g>
+	 <style>
+	 .animated {
+       -webkit-animation-duration: 1s;
+       animation-duration: 1s;
+       -webkit-animation-fill-mode: both;
+       animation-fill-mode: both;
+     }
+
+     .animated.infinite {
+       -webkit-animation-iteration-count: infinite;
+       animation-iteration-count: infinite;
+     }
+     @-webkit-keyframes bounce {
+       0%, 20%, 53%, 80%, 100% {
+         -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+         animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+         -webkit-transform: translate3d(0,0,0);
+         transform: translate3d(0,0,0);
+       }
+
+       40%, 43% {
+         -webkit-animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+         animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+         -webkit-transform: translate3d(0, -30px, 0);
+         transform: translate3d(0, -30px, 0);
+       }
+
+       70% {
+         -webkit-animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+         animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+         -webkit-transform: translate3d(0, -15px, 0);
+         transform: translate3d(0, -15px, 0);
+       }
+
+       90% {
+         -webkit-transform: translate3d(0,-4px,0);
+         transform: translate3d(0,-4px,0);
+       }
+     }
+
+     @keyframes bounce {
+       0%, 20%, 53%, 80%, 100% {
+         -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+         animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+         -webkit-transform: translate3d(0,0,0);
+         transform: translate3d(0,0,0);
+       }
+
+       40%, 43% {
+         -webkit-animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+         animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+         -webkit-transform: translate3d(0, -30px, 0);
+         transform: translate3d(0, -30px, 0);
+       }
+
+       70% {
+         -webkit-animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+         animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+         -webkit-transform: translate3d(0, -15px, 0);
+         transform: translate3d(0, -15px, 0);
+       }
+
+       90% {
+         -webkit-transform: translate3d(0,-4px,0);
+         transform: translate3d(0,-4px,0);
+       }
+     }
+
+     .bounce {
+       -webkit-animation-name: bounce;
+       animation-name: bounce;
+       -webkit-transform-origin: center bottom;
+       transform-origin: center bottom;
+     }
+
+	 </style>
+<g class="animated bounce infinite">
 	<polygon fill="#52B1DF" points="579,48 589,49.467 579,59 	"/>
 	<rect x="489" y="21" fill="#7CD2FC" width="100" height="29"/>
 	<path fill="#FEFEFE" d="M507.312,41.578c2.297-0.094,3.75-1.359,4.357-3.797l1.828,0.422c-0.891,3.047-2.93,4.593-6.117,4.641
