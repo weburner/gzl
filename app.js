@@ -34,8 +34,10 @@ $(document).ready(function () {
     }
     overLoading();
 
+    var playing;
+
     function initAudio(){
-        var playing = true;
+        playing = true;
         $('#music-button').bind('click', function(){
             $(this).toggleClass("down");
             if (playing == false) {
@@ -189,10 +191,15 @@ $(document).ready(function () {
         $('#video_play_button').on('click', function(e){
             var myVideo = document.getElementById("video");
             console.log("hihi");
-            if (myVideo.paused)
+            if (myVideo.paused){
                 myVideo.play();
-            else
+                document.getElementById('bg-audio').pause();
+                playing = false;
+            }
+            else{
                 myVideo.pause();
+            }
+
         });
         $('.play_button').on('click', function(e){
             swiper_cover.slideNext(true, 1000);
