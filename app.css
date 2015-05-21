@@ -140,3 +140,7 @@ body {
     background-size: 100% auto;
     background-repeat: no-repeat;
 }
+.full-height{
+    width: auto;
+    height: 100%;
+}

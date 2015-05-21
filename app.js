@@ -39,11 +39,13 @@ $(document).ready(function () {
     function initAudio(){
         playing = true;
         $('#music-button').bind('click', function(){
-            $(this).toggleClass("down");
+
             if (playing == false) {
+                $(this).addClass("down");
                 document.getElementById('bg-audio').play();
                 playing = true;
             } else {
+                $(this).removeClass("down");
                 document.getElementById('bg-audio').pause();
                 playing = false;
             }
@@ -193,6 +195,8 @@ $(document).ready(function () {
             console.log("hihi");
             if (myVideo.paused){
                 myVideo.play();
+
+                $(this).removeClass("down");
                 document.getElementById('bg-audio').pause();
                 playing = false;
             }
@@ -205,6 +209,7 @@ $(document).ready(function () {
             swiper_cover.slideNext(true, 1000);
             swiper_cover.startAutoplay();
 
+            $(this).addClass("down");
             document.getElementById('bg-audio').play();
             playing = true;
 

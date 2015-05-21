@@ -1,12 +1,1 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="129px" height="130px" viewBox="0 0 129 130" enable-background="new 0 0 129 130" xml:space="preserve">
-<g enable-background="new    ">
-	<circle fill="#114077" cx="64.5" cy="65" r="57.5"/>
-	<path fill="#FEF699" d="M64.5,122.5C32.744,122.5,7,96.756,7,65S32.744,7.5,64.5,7.5S122,33.244,122,65S96.256,122.5,64.5,122.5z
-		 M64.5,118.5c29.5,0,53.5-24,53.5-53.5S94,11.5,64.5,11.5S11,35.5,11,65S35,118.5,64.5,118.5"/>
-	<polygon fill="#FEF699" points="100.92,65.482 46.298,97.592 46.298,33.37 	"/>
-</g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="129" height="130" viewBox="0 0 129 130"><g enable-background="new"><circle fill="#114077" cx="64.5" cy="65" r="57.5"/><path fill="#FEF699" d="M64.5 122.5c-31.756 0-57.5-25.744-57.5-57.5s25.744-57.5 57.5-57.5 57.5 25.744 57.5 57.5-25.744 57.5-57.5 57.5zm0-4c29.5 0 53.5-24 53.5-53.5s-24-53.5-53.5-53.5-53.5 24-53.5 53.5 24 53.5 53.5 53.5"/><path fill="#FEF699" d="M100.92 65.482l-54.622 32.11v-64.222z"/></g></svg>

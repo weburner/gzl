@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="app.css">
 
     <style>
-
         video {
             width: 100% !important;
             height: auto !important;
@@ -23,26 +22,6 @@
             position: absolute;
             bottom: -1000px;
         }
-
-        .video-box {
-            height: 100% !important;
-            width: 100%;
-            position: relative;
-            overflow: hidden;
-        }
-
-        #video-play-button {
-            position: absolute;
-            top: 0;
-            left: -1px;
-            right: 0;
-            bottom: 0;
-            z-index: 100;
-            background-image: url('imgs/04-01-bg.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-        }
-
     </style>
 </head>
 <body style="background-color: #0a60af">
@@ -58,7 +37,7 @@
 
 <!-- Swiper -->
 <div class="full-width fix-top z-index-10">
-    <img id="music-button" src="imgs/sound-icon.svg"
+    <img class="down" id="music-button" src="imgs/sound-icon.svg"
          style="float: right; padding-top: 10px; padding-right: 10px; width: 30px; height: auto">
     <a href="tel:4008638888">
         <img src="imgs/tele-icon.svg"
@@ -156,7 +135,7 @@
     <div class="swiper_vertical swiper-container" id="page-1">
         <div class="swiper-wrapper">
             <!-- Page 02-01 -->
-            <div class="swiper-slide" style="background-image:url('imgs/02-01-bg.jpg')">
+            <div class="swiper-slide" style="background-image:url('imgs/02-01-bg.jpg')" >
                 <img src="imgs/02-01-head.svg" class="z-index-10 full-width fix-bottom"
                      animated-css="fadeInLeft">
                 <img src="imgs/02-01-text.svg" class="full-width fix-bottom" animated-css="fadeInRight">
