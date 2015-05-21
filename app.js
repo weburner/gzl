@@ -34,6 +34,19 @@ $(document).ready(function () {
     }
     overLoading();
 
+    function initAudio(){
+        var playing = true;
+        $('#music-button').bind('click', function(){
+            $(this).toggleClass("down");
+            if (playing == false) {
+                document.getElementById('bg-audio').play();
+                playing = true;
+            } else {
+                document.getElementById('bg-audio').pause();
+                playing = false;
+            }
+        });
+    }
 
     function overLoading(){
         $('#loading').addClass("animated bounceOut").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
@@ -43,6 +56,7 @@ $(document).ready(function () {
             $("#main-content").css('opacity', '1');
             initSwiper();
             initLink();
+            initAudio();
         });
     }
 
@@ -183,6 +197,9 @@ $(document).ready(function () {
         $('.play_button').on('click', function(e){
             swiper_cover.slideNext(true, 1000);
             swiper_cover.startAutoplay();
+
+            document.getElementById('bg-audio').play();
+            playing = true;
 
         });
 
