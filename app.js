@@ -32,15 +32,21 @@ $(document).ready(function () {
             "01-04-bg.jpg",
             "01-06-bg.jpg",
             "01-07-bg.jpg",
-            "02-01-bg.jpg"
+            "02-01-bg.jpg",
+            "04-08-bg.jpg",
+            "03-06-3-pic.png"
         ]);
         preload.on("complete", handleComplete);
         preload.on("progress", handleOverallProgress);
 
     }
 
+    var page_02 = [];
+
+    var page_04 = [];
+
+
     function handleOverallProgress(event) {
-//        console.log(preload.progress);
         $('#loading-percent').html(Math.round(preload.progress * 100));
     }
 
@@ -88,6 +94,7 @@ $(document).ready(function () {
 
     var currentIndex = 0;
     var currentIndex_swiper_vertical = 0;
+    var currentIndex_swiper_vertical_b = 0;
 
     function initSwiper(){
 
@@ -115,6 +122,7 @@ $(document).ready(function () {
 
                 if(swiper.activeIndex == 3){
                     swiper.stopAutoplay();
+                    swiper.removeSlide([0,1,2]);
                 }
             },
             onTransitionStart: function(swiper){
@@ -131,8 +139,6 @@ $(document).ready(function () {
             noSwipingClass:"swiper-main-no-swiping",
             // Optional parameters
             onInit: function(swiper){
-                console.log(swiper);
-
             },
             onTransitionEnd: function(swiper){
                 if(swiper.activeIndex == 1){
@@ -144,25 +150,75 @@ $(document).ready(function () {
                 else{
                     showOnebyOne("swiper-one-page");
                 }
-
-
             },
             onTransitionStart: function(swiper){
+
                 if(swiper.activeIndex == 1){
-                    hideSlide("swiper_vertical", "swiper-slide-prev");
-                    hideSlide("swiper_vertical", "swiper-vertical-slide-active");
-                    hideSlide("swiper_vertical", "swiper-slide-next");
+                    if(page_02.length == 0){
+                        $.get('page-02.html', function(response){
+                            var page_response = $(response);
+
+                            var i = 0;
+                            $.each(page_response, function(key, value){
+                                if($(value).hasClass('swiper-slide')){
+                                    page_02[i]=value;
+                                    i++;
+                                }
+                            });
+                            swiper_vertical.appendSlide(page_02);
+                            $('.back_to_top_button').on('click', function(e){
+                                swiper.slideTo(0);
+                            });
+                            hideSlide("swiper_vertical", "swiper-slide-prev");
+                            hideSlide("swiper_vertical", "swiper-vertical-slide-active");
+                            hideSlide("swiper_vertical", "swiper-slide-next");
+                        });
+                    }
+                    else{
+                        swiper_vertical.appendSlide(page_02);
+                        $('.back_to_top_button').on('click', function(e){
+                            swiper.slideTo(0);
+                        });
+                        hideSlide("swiper_vertical", "swiper-slide-prev");
+                        hideSlide("swiper_vertical", "swiper-vertical-slide-active");
+                        hideSlide("swiper_vertical", "swiper-slide-next");
+                    }
                 }
                 else if(swiper.activeIndex == 3){
-                    hideSlide("swiper_vertical_b", "swiper-slide-prev");
-                    hideSlide("swiper_vertical_b", "swiper-vertical-b-slide-active");
-                    hideSlide("swiper_vertical_b", "swiper-slide-next");
+                    if(page_04.length == 0){
+                        $.get('page-04.html', function(response){
+                            var page_response = $(response);
+
+                            var i = 0;
+                            $.each(page_response, function(key, value){
+                                if($(value).hasClass('swiper-slide')){
+                                    page_04[i]=value;
+                                    i++;
+                                }
+                            });
+                            swiper_vertical_b.appendSlide(page_04);
+                            $('.back_to_top_button').on('click', function(e){
+                                swiper.slideTo(0);
+                            });
+                            hideSlide("swiper_vertical_b", "swiper-slide-prev");
+                            hideSlide("swiper_vertical_b", "swiper-vertical-b-slide-active");
+                            hideSlide("swiper_vertical_b", "swiper-slide-next");
+                        });
+                    }
+                    else{
+                        swiper_vertical_b.appendSlide(page_04);
+                        $('.back_to_top_button').on('click', function(e){
+                            swiper.slideTo(0);
+                        });
+                        hideSlide("swiper_vertical_b", "swiper-slide-prev");
+                        hideSlide("swiper_vertical_b", "swiper-vertical-b-slide-active");
+                        hideSlide("swiper_vertical_b", "swiper-slide-next");
+                    }
                 }
                 else
                 {
                     hideSlide("swiper-one-page-wapper", "swiper-one-page");
                 }
-
 
             }
         });
@@ -174,10 +230,7 @@ $(document).ready(function () {
             direction: 'vertical',
             slideActiveClass:"swiper-vertical-slide-active",
             onInit: function(swiper){
-                $('.back_to_top_button').on('click', function(e){
-                    swiper.slideTo(0);
 
-                });
             },
             onTransitionEnd: function(swiper){
 
@@ -199,20 +252,16 @@ $(document).ready(function () {
             direction: 'vertical',
             slideActiveClass:"swiper-vertical-b-slide-active",
             onInit: function(swiper){
-                $('.back_to_top_button').on('click', function(e){
-                    swiper.slideTo(0);
-
-                });
             },
             onTransitionEnd: function(swiper){
 
-                if(currentIndex_swiper_vertical != swiper.activeIndex){
+                if(currentIndex_swiper_vertical_b != swiper.activeIndex){
                     showOnebyOne("swiper-vertical-b-slide-active");
                 }
-                currentIndex_swiper_vertical = swiper.activeIndex;
+                currentIndex_swiper_vertical_b = swiper.activeIndex;
             },
             onTransitionStart: function(swiper){
-                if(currentIndex_swiper_vertical != swiper.activeIndex){
+                if(currentIndex_swiper_vertical_b != swiper.activeIndex){
                     hideSlide("swiper_vertical_b", "swiper-slide-prev");
                     hideSlide("swiper_vertical_b", "swiper-slide-next");
                 }
@@ -243,7 +292,7 @@ $(document).ready(function () {
     function initLink(){
         $('#video_play_button').on('click', function(e){
             var myVideo = document.getElementById("video");
-            console.log("hihi");
+
             if (myVideo.paused){
                 myVideo.play();
 
@@ -310,6 +359,18 @@ $(document).ready(function () {
             if(swiper_main.activeIndex == 5 || swiper_main.activeIndex == 6 || swiper_main.activeIndex == 7){
                 swiper_main.slideTo(2);
             }
+            else if(swiper_main.activeIndex == 1){
+                swiper_main.slideTo(0);
+                $('#back_button').hide();
+                swiper_vertical.removeSlide([1,2,3,4,5,6,7,8,9,10]);
+                currentIndex_swiper_vertical = 0;
+            }
+            else if(swiper_main.activeIndex == 3){
+                swiper_main.slideTo(0);
+                $('#back_button').hide();
+                swiper_vertical_b.removeSlide([1,2,3,4,5,6,7,8,9,10,11,12,13]);
+                currentIndex_swiper_vertical_b = 0;
+            }
             else{
                 swiper_main.slideTo(0);
                 $('#back_button').hide();
@@ -358,7 +419,7 @@ $(document).ready(function () {
         $('.' + classString + ' .animated-box').children().each(function(element){
 
             if($(this).attr('animated-css')){
-//                console.log($(this));
+
                 showOpacity($(this));
                 $(this).addClass('animated ' + $(this).attr('animated-css')).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
                     $(this).removeClass('animated ' + $(this).attr('animated-css'));
