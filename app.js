@@ -8,6 +8,11 @@ $(document).ready(function () {
     var swiper_main;
     var swiper_vertical;
     var swiper_vertical_b;
+    var currentIndex = 0;
+    var currentIndex_swiper_vertical = 0;
+    var currentIndex_swiper_vertical_b = 0;
+    var page_02 = [];
+    var page_04 = [];
 
     function init() {
         // Create a new queue.
@@ -40,11 +45,6 @@ $(document).ready(function () {
         preload.on("progress", handleOverallProgress);
 
     }
-
-    var page_02 = [];
-
-    var page_04 = [];
-
 
     function handleOverallProgress(event) {
         $('#loading-percent').html(Math.round(preload.progress * 100));
@@ -88,13 +88,6 @@ $(document).ready(function () {
             initAudio();
         });
     }
-
-
-
-
-    var currentIndex = 0;
-    var currentIndex_swiper_vertical = 0;
-    var currentIndex_swiper_vertical_b = 0;
 
     function initSwiper(){
 
