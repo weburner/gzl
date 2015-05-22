@@ -26,16 +26,31 @@ $(document).ready(function () {
         };
 
         preload.installPlugin(plugin);
-        preload.loadManifest(["01-01-icon.svg"
-
+        preload.loadManifest([
+            "01-02-bg.jpg",
+            "01-03-bg.jpg",
+            "01-04-bg.jpg",
+            "01-06-bg.jpg",
+            "01-07-bg.jpg",
+            "02-01-bg.jpg"
         ]);
         preload.on("complete", handleComplete);
+        preload.on("progress", handleOverallProgress);
 
+    }
+
+    function handleOverallProgress(event) {
+//        console.log(preload.progress);
+        $('#loading-percent').html(Math.round(preload.progress * 100));
     }
 
     function handleComplete(event) {
         overLoading();
     }
+
+    $(".outside-content").css('opacity', '0');
+    $('#main-content').css('opacity', '0');
+
     init();
 
     var playing;
@@ -69,8 +84,7 @@ $(document).ready(function () {
     }
 
 
-    $(".outside-content").css('opacity', '0');
-    $('#main-content').css('opacity', '0');
+
 
     var currentIndex = 0;
     var currentIndex_swiper_vertical = 0;
