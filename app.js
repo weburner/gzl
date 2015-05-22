@@ -6,6 +6,8 @@ $(document).ready(function () {
     var preload;
     var swiper_cover;
     var swiper_main;
+    var swiper_vertical;
+    var swiper_vertical_b;
 
     function init() {
         // Create a new queue.
@@ -24,7 +26,9 @@ $(document).ready(function () {
         };
 
         preload.installPlugin(plugin);
+        preload.loadManifest(["01-01-icon.svg"
 
+        ]);
         preload.on("complete", handleComplete);
 
     }
@@ -32,7 +36,7 @@ $(document).ready(function () {
     function handleComplete(event) {
         overLoading();
     }
-    overLoading();
+    init();
 
     var playing;
 
@@ -117,8 +121,11 @@ $(document).ready(function () {
 
             },
             onTransitionEnd: function(swiper){
-                if(swiper.activeIndex == 1 || swiper.activeIndex == 3){
+                if(swiper.activeIndex == 1){
                     showOnebyOne("swiper-vertical-slide-active");
+                }
+                else if(swiper.activeIndex == 3){
+                    showOnebyOne("swiper-vertical-b-slide-active");
                 }
                 else{
                     showOnebyOne("swiper-one-page");
@@ -127,10 +134,15 @@ $(document).ready(function () {
 
             },
             onTransitionStart: function(swiper){
-                if(swiper.activeIndex == 1 || swiper.activeIndex == 3){
+                if(swiper.activeIndex == 1){
                     hideSlide("swiper_vertical", "swiper-slide-prev");
                     hideSlide("swiper_vertical", "swiper-vertical-slide-active");
                     hideSlide("swiper_vertical", "swiper-slide-next");
+                }
+                else if(swiper.activeIndex == 3){
+                    hideSlide("swiper_vertical_b", "swiper-slide-prev");
+                    hideSlide("swiper_vertical_b", "swiper-vertical-b-slide-active");
+                    hideSlide("swiper_vertical_b", "swiper-slide-next");
                 }
                 else
                 {
@@ -142,7 +154,7 @@ $(document).ready(function () {
         });
 
 
-        var swiper_vertical = new Swiper ('.swiper_vertical', {
+        swiper_vertical = new Swiper ('.swiper_vertical', {
             noSwipingClass:"swiper-vertical-no-swiping",
             // Optional parameters
             direction: 'vertical',
@@ -164,6 +176,31 @@ $(document).ready(function () {
                 if(currentIndex_swiper_vertical != swiper.activeIndex){
                     hideSlide("swiper_vertical", "swiper-slide-prev");
                     hideSlide("swiper_vertical", "swiper-slide-next");
+                }
+            }
+        });
+        swiper_vertical_b = new Swiper ('.swiper_vertical_b', {
+            noSwipingClass:"swiper-vertical-b-no-swiping",
+            // Optional parameters
+            direction: 'vertical',
+            slideActiveClass:"swiper-vertical-b-slide-active",
+            onInit: function(swiper){
+                $('.back_to_top_button').on('click', function(e){
+                    swiper.slideTo(0);
+
+                });
+            },
+            onTransitionEnd: function(swiper){
+
+                if(currentIndex_swiper_vertical != swiper.activeIndex){
+                    showOnebyOne("swiper-vertical-b-slide-active");
+                }
+                currentIndex_swiper_vertical = swiper.activeIndex;
+            },
+            onTransitionStart: function(swiper){
+                if(currentIndex_swiper_vertical != swiper.activeIndex){
+                    hideSlide("swiper_vertical_b", "swiper-slide-prev");
+                    hideSlide("swiper_vertical_b", "swiper-slide-next");
                 }
             }
         });
@@ -248,6 +285,11 @@ $(document).ready(function () {
         $('#link_button_7').on('click', function(e){
             $('#back_button').show();
             swiper_main.slideTo(7);
+
+        });
+        $('#link_button_8').on('click', function(e){
+            $('#back_button').show();
+            swiper_vertical_b.slideTo(2);
 
         });
         $('#back_button').on('click', function(e){

@@ -22,6 +22,22 @@
             position: absolute;
             bottom: -1000px;
         }
+        #music-button{
+            background-image:url(imgs/sound-on-icon.svg);
+            background-size:100%;
+            background-repeat:no-repeat;
+            background-position: center center;
+            float: right;
+            margin-top: 10px;
+            margin-right: 10px;
+            width: 30px;
+            height: 30px;
+
+        }
+        #music-button.down{
+            background-image:url(imgs/sound-icon.svg);
+        }
+
     </style>
 </head>
 <body style="background-color: #0a60af">
@@ -37,8 +53,7 @@
 
 <!-- Swiper -->
 <div class="full-width fix-top z-index-10">
-    <img class="down" id="music-button" src="imgs/sound-icon.svg"
-         style="float: right; padding-top: 10px; padding-right: 10px; width: 30px; height: auto">
+    <div id="music-button" class="down" style=""></div>
     <a href="tel:02086342282">
         <img src="imgs/tele-icon.svg"
              style="float: right; padding-top: 10px; padding-right: 10px; width: 30px; height: auto">
@@ -253,7 +268,7 @@
 </div>
 
 <div class="swiper-slide">
-    <div class="swiper_vertical swiper-container" id="page-3">
+    <div class="swiper_vertical_b swiper-container" id="page-3">
         <div class="swiper-wrapper">
 
             <!-- Page 04-01 Ship Intro-->
@@ -288,7 +303,7 @@
                     <img src="imgs/04-03-head.svg" class="full-width" animated-css="fadeInLeft">
 
                     <div class="delay-5" animated-css="fadeInRight" style="margin-top: -40px;">
-                        <img src="imgs/04-03-click.svg" class="full-width animated infinite bounce"
+                        <img src="imgs/04-03-click.svg" class="duration-a delay-5 full-width animated infinite bounce"
                              style="float: left;">
                     </div>
 

@@ -144,3 +144,11 @@ body {
     width: auto;
     height: 100%;
 }
+.duration-a{
+    -webkit-animation-duration: 1.2s;
+    animation-duration: 1.2s;
+}
+.duration-b{
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+}
