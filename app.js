@@ -168,17 +168,17 @@ $(document).ready(function () {
         });
         $('#link_button_2').on('click', function(e){
             $('#back_button').show();
-            swiper_main.slideTo(2);
+            loadAndShow("page-03.html", initPageThree, page_02_imgs);
 
         });
         $('#link_button_3').on('click', function(e){
             $('#back_button').show();
-            swiper_main.slideTo(3);
+            loadAndShow("page-04.html", initPageFour, page_02_imgs);
 
         });
         $('#link_button_4').on('click', function(e){
             $('#back_button').show();
-            swiper_main.slideTo(4);
+            loadAndShow("page-05.html", initPageFive, page_02_imgs);
 
         });
     }
@@ -266,6 +266,67 @@ $(document).ready(function () {
         });
     }
 
+    function initPageFive(){
+
+    }
+
+    function initPageThree(){
+        $('#link_button_5').on('click', function(e){
+            $('#back_button').show();
+            loadAndShow("page-06.html", initPageSix, page_02_imgs);
+
+        });
+        $('#link_button_6').on('click', function(e){
+            $('#back_button').show();
+            loadAndShow("page-07.html", initPageSix, page_02_imgs);
+
+        });
+        $('#link_button_7').on('click', function(e){
+            $('#back_button').show();
+            loadAndShow("page-08.html", initPageSix, page_02_imgs);
+
+        });
+    }
+    function initPageFour(){
+        swiper_vertical_b = new Swiper ('.swiper_vertical_b', {
+            noSwipingClass:"swiper-vertical-b-no-swiping",
+            // Optional parameters
+            direction: 'vertical',
+            slideActiveClass:"swiper-vertical-b-slide-active",
+            onInit: function(swiper){
+            },
+            onTransitionEnd: function(swiper){
+
+                if(currentIndex_swiper_vertical_b != swiper.activeIndex){
+                    showOnebyOne("swiper-vertical-b-slide-active");
+                }
+                currentIndex_swiper_vertical_b = swiper.activeIndex;
+            },
+            onTransitionStart: function(swiper){
+                if(currentIndex_swiper_vertical_b != swiper.activeIndex){
+                    hideSlide("swiper_vertical_b", "swiper-slide-prev");
+                    hideSlide("swiper_vertical_b", "swiper-slide-next");
+                }
+            }
+        });
+    }
+    function initPageSix(){
+        var swiper_scroll = new Swiper ('.swiper_scroll', {
+            // Optional parameters
+            scrollbar: '.swiper-scrollbar',
+            slideClass: 'swiper-scroll-slide',
+            direction: 'vertical',
+            slidesPerView: 'auto',
+            mousewheelControl: true,
+            freeMode: true,
+            onInit: function(swiper){
+                $('.scroll_top').on('click', function(e){
+                    swiper.setWrapperTranslate(0);
+
+                });
+            }
+        });
+    }
 
     function initSwiper(){
 
