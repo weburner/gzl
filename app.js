@@ -15,7 +15,12 @@ $(document).ready(function () {
     var page_04 = [];
 
     var cover_imgs = [
-        {src:"imgs/01-02-logo-royal.svg", type:createjs.AbstractLoader.IMAGE}
+        {src:"imgs/01-02-logo-royal.svg", type:createjs.AbstractLoader.IMAGE},
+        {src:"imgs/01-02-slogan.svg", type:createjs.AbstractLoader.IMAGE},
+        {src:"imgs/01-02-btn.svg", type:createjs.AbstractLoader.IMAGE},
+        {src:"imgs/01-02-icon.svg", type:createjs.AbstractLoader.IMAGE},
+        {src:"imgs/01-02-logo-gzl.svg", type:createjs.AbstractLoader.IMAGE},
+        "imgs/01-02-bg.jpg"
     ];
 
     loadAndShow("cover.html", initCover, cover_imgs);
@@ -47,7 +52,8 @@ $(document).ready(function () {
                     extensions: ["svg","mp3","png","jpg"],
                     callback: function (item) {
                         var src = item.src;
-                        $('[img-src="'+src +'"]').attr("src", src);
+                        $('[preload-img="'+src +'"]').attr("src", src);
+                        $('[preload-bg="'+src +'"]').attr("style", "background-image: url(" + src + ")");
                     }
                 };
             }
