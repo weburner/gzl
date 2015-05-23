@@ -15,12 +15,22 @@ $(document).ready(function () {
     var page_04 = [];
 
     var cover_imgs = [
-        {src:"imgs/01-02-logo-royal.svg", type:createjs.AbstractLoader.IMAGE},
-        {src:"imgs/01-02-slogan.svg", type:createjs.AbstractLoader.IMAGE},
+        {src:"imgs/01-01-icon.svg", type:createjs.AbstractLoader.IMAGE},
         {src:"imgs/01-02-btn.svg", type:createjs.AbstractLoader.IMAGE},
         {src:"imgs/01-02-icon.svg", type:createjs.AbstractLoader.IMAGE},
         {src:"imgs/01-02-logo-gzl.svg", type:createjs.AbstractLoader.IMAGE},
-        "imgs/01-02-bg.jpg"
+        {src:"imgs/01-02-slogan.svg", type:createjs.AbstractLoader.IMAGE},
+        {src:"imgs/01-02-button1.svg", type:createjs.AbstractLoader.IMAGE},
+        {src:"imgs/01-02-button2.svg", type:createjs.AbstractLoader.IMAGE},
+        {src:"imgs/01-02-button3.svg", type:createjs.AbstractLoader.IMAGE},
+        {src:"imgs/01-02-button4.svg", type:createjs.AbstractLoader.IMAGE},
+        {src:"imgs/01-07-click.svg", type:createjs.AbstractLoader.IMAGE},
+        {src:"imgs/01-07-text.svg", type:createjs.AbstractLoader.IMAGE},
+        "imgs/01-02-bg.jpg",
+        "imgs/01-03-bg.jpg",
+        "imgs/01-04-bg.jpg",
+        "imgs/01-06-bg.jpg",
+        "imgs/01-07-bg.jpg"
     ];
     var page_02_imgs = [
         "imgs/02-01-bg.jpg",
