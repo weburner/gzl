@@ -118,9 +118,14 @@ $(document).ready(function () {
         {src:"imgs/04-13-text.svg", type:createjs.AbstractLoader.IMAGE},
         "imgs/04-14-bg.jpg",
         "imgs/04-14-text-bg.png",
-        {src:"imgs/04-14-text.svg", type:createjs.AbstractLoader.IMAGE},
+        {src:"imgs/04-14-text.svg", type:createjs.AbstractLoader.IMAGE}
     ];
     var page_05_imgs = [
+        "imgs/05-01-bg.jpg",
+        {src:"imgs/05-01-booking.svg", type:createjs.AbstractLoader.IMAGE},
+        {src:"imgs/05-01-head.svg", type:createjs.AbstractLoader.IMAGE},
+        {src:"imgs/05-01-icon.svg", type:createjs.AbstractLoader.IMAGE},
+        {src:"imgs/05-01-text.svg", type:createjs.AbstractLoader.IMAGE}
     ];
     var page_06_imgs = [
         "imgs/03-02-1-pic.png",
