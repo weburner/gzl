@@ -19,11 +19,12 @@ $(document).ready(function () {
         {src:"imgs/01-02-btn.svg", type:createjs.AbstractLoader.IMAGE},
         {src:"imgs/01-02-icon.svg", type:createjs.AbstractLoader.IMAGE},
         {src:"imgs/01-02-logo-gzl.svg", type:createjs.AbstractLoader.IMAGE},
+        {src:"imgs/01-02-logo-royal.svg", type:createjs.AbstractLoader.IMAGE},
         {src:"imgs/01-02-slogan.svg", type:createjs.AbstractLoader.IMAGE},
-        {src:"imgs/01-02-button1.svg", type:createjs.AbstractLoader.IMAGE},
-        {src:"imgs/01-02-button2.svg", type:createjs.AbstractLoader.IMAGE},
-        {src:"imgs/01-02-button3.svg", type:createjs.AbstractLoader.IMAGE},
-        {src:"imgs/01-02-button4.svg", type:createjs.AbstractLoader.IMAGE},
+        {src:"imgs/01-07-button1.svg", type:createjs.AbstractLoader.IMAGE},
+        {src:"imgs/01-07-button2.svg", type:createjs.AbstractLoader.IMAGE},
+        {src:"imgs/01-07-button3.svg", type:createjs.AbstractLoader.IMAGE},
+        {src:"imgs/01-07-button4.svg", type:createjs.AbstractLoader.IMAGE},
         {src:"imgs/01-07-click.svg", type:createjs.AbstractLoader.IMAGE},
         {src:"imgs/01-07-text.svg", type:createjs.AbstractLoader.IMAGE},
         "imgs/01-02-bg.jpg",
@@ -32,9 +33,23 @@ $(document).ready(function () {
         "imgs/01-06-bg.jpg",
         "imgs/01-07-bg.jpg"
     ];
+    var cover_menu_imgs = [
+        {src:"imgs/01-07-button1.svg", type:createjs.AbstractLoader.IMAGE},
+        {src:"imgs/01-07-button2.svg", type:createjs.AbstractLoader.IMAGE},
+        {src:"imgs/01-07-button3.svg", type:createjs.AbstractLoader.IMAGE},
+        {src:"imgs/01-07-button4.svg", type:createjs.AbstractLoader.IMAGE},
+        {src:"imgs/01-07-click.svg", type:createjs.AbstractLoader.IMAGE},
+        {src:"imgs/01-07-text.svg", type:createjs.AbstractLoader.IMAGE},
+
+        "imgs/01-04-bg.jpg",
+        "imgs/01-06-bg.jpg",
+        "imgs/01-07-bg.jpg"
+    ];
     var page_02_imgs = [
         "imgs/02-01-bg.jpg",
+        {src:"imgs/02-01-head.svg", type:createjs.AbstractLoader.IMAGE},
         {src:"imgs/02-01-text.svg", type:createjs.AbstractLoader.IMAGE},
+        {src:"imgs/back-to-top.svg", type:createjs.AbstractLoader.IMAGE},
         "imgs/02-02-bg.jpg",
         {src:"imgs/02-02-head.svg", type:createjs.AbstractLoader.IMAGE},
         {src:"imgs/02-02-text.svg", type:createjs.AbstractLoader.IMAGE},
@@ -81,6 +96,7 @@ $(document).ready(function () {
         {src:"imgs/03-01-text.svg", type:createjs.AbstractLoader.IMAGE}
     ];
     var page_04_imgs = [
+        {src:"imgs/back-to-top.svg", type:createjs.AbstractLoader.IMAGE},
         "imgs/04-01-bg.jpg",
         {src:"imgs/04-01-head.svg", type:createjs.AbstractLoader.IMAGE},
         {src:"imgs/04-01-play.svg", type:createjs.AbstractLoader.IMAGE},
@@ -128,14 +144,20 @@ $(document).ready(function () {
         {src:"imgs/04-13-text.svg", type:createjs.AbstractLoader.IMAGE},
         "imgs/04-14-bg.jpg",
         "imgs/04-14-text-bg.png",
-        {src:"imgs/04-14-text.svg", type:createjs.AbstractLoader.IMAGE}
+        {src:"imgs/04-14-text.svg", type:createjs.AbstractLoader.IMAGE},
+        "imgs/02-11-bg.jpg",
+        {src:"imgs/02-11-button.svg", type:createjs.AbstractLoader.IMAGE},
+        {src:"imgs/02-11-logo.svg", type:createjs.AbstractLoader.IMAGE},
+        {src:"imgs/02-11-text1.svg", type:createjs.AbstractLoader.IMAGE},
+        {src:"imgs/02-11-text2.svg", type:createjs.AbstractLoader.IMAGE}
     ];
     var page_05_imgs = [
         "imgs/05-01-bg.jpg",
         {src:"imgs/05-01-booking.svg", type:createjs.AbstractLoader.IMAGE},
         {src:"imgs/05-01-head.svg", type:createjs.AbstractLoader.IMAGE},
         {src:"imgs/05-01-icon.svg", type:createjs.AbstractLoader.IMAGE},
-        {src:"imgs/05-01-text.svg", type:createjs.AbstractLoader.IMAGE}
+        {src:"imgs/05-01-text.svg", type:createjs.AbstractLoader.IMAGE},
+        {src:"imgs/logos.svg", type:createjs.AbstractLoader.IMAGE}
     ];
     var page_06_imgs = [
         "imgs/03-02-1-pic.png",
@@ -400,7 +422,7 @@ $(document).ready(function () {
 
     $('#back_button').on('click', function(e){
         $('#back_button').hide();
-        loadAndShow("cover-menu.html",initCover);
+        loadAndShow("cover-menu.html", initCover, cover_menu_imgs);
     });
 
 
