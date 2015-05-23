@@ -26,6 +26,18 @@ $(document).ready(function () {
         "imgs/02-01-bg.jpg",
         "imgs/02-02-bg.jpg"
     ];
+    var page_03_imgs = [
+    ];
+    var page_04_imgs = [
+    ];
+    var page_05_imgs = [
+    ];
+    var page_06_imgs = [
+    ];
+    var page_07_imgs = [
+    ];
+    var page_08_imgs = [
+    ];
 
     loadAndShow("cover.html", initCover, cover_imgs);
 
@@ -168,17 +180,17 @@ $(document).ready(function () {
         });
         $('#link_button_2').on('click', function(e){
             $('#back_button').show();
-            loadAndShow("page-03.html", initPageThree, page_02_imgs);
+            loadAndShow("page-03.html", initPageThree, page_03_imgs);
 
         });
         $('#link_button_3').on('click', function(e){
             $('#back_button').show();
-            loadAndShow("page-04.html", initPageFour, page_02_imgs);
+            loadAndShow("page-04.html", initPageFour, page_04_imgs);
 
         });
         $('#link_button_4').on('click', function(e){
             $('#back_button').show();
-            loadAndShow("page-05.html", initPageFive, page_02_imgs);
+            loadAndShow("page-05.html", initPageFive, page_05_imgs);
 
         });
     }
@@ -273,17 +285,17 @@ $(document).ready(function () {
     function initPageThree(){
         $('#link_button_5').on('click', function(e){
             $('#back_button').show();
-            loadAndShow("page-06.html", initPageSix, page_02_imgs);
+            loadAndShow("page-06.html", initPageSix, page_06_imgs);
 
         });
         $('#link_button_6').on('click', function(e){
             $('#back_button').show();
-            loadAndShow("page-07.html", initPageSix, page_02_imgs);
+            loadAndShow("page-07.html", initPageSix, page_07_imgs);
 
         });
         $('#link_button_7').on('click', function(e){
             $('#back_button').show();
-            loadAndShow("page-08.html", initPageSix, page_02_imgs);
+            loadAndShow("page-08.html", initPageSix, page_08_imgs);
 
         });
     }
