@@ -22,6 +22,10 @@ $(document).ready(function () {
         {src:"imgs/01-02-logo-gzl.svg", type:createjs.AbstractLoader.IMAGE},
         "imgs/01-02-bg.jpg"
     ];
+    var page_02_imgs = [
+        "imgs/02-01-bg.jpg",
+        "imgs/02-02-bg.jpg"
+    ];
 
     loadAndShow("cover.html", initCover, cover_imgs);
 
@@ -159,7 +163,7 @@ $(document).ready(function () {
     function initCoverMenu(){
         $('#link_button_1').on('click', function(e){
             $('#back_button').show();
-            loadAndShow("page-02.html", initPageTwo, cover_imgs);
+            loadAndShow("page-02.html", initPageTwo, page_02_imgs);
 
         });
         $('#link_button_2').on('click', function(e){
