@@ -15,7 +15,7 @@ $(document).ready(function () {
     var page_04 = [];
 
     var cover_imgs = [
-        "imgs/01-02-logo-royal.svg"
+        {src:"imgs/01-02-logo-royal.svg", type:createjs.AbstractLoader.IMAGE}
     ];
 
     loadAndShow("cover.html", initCover, cover_imgs);
