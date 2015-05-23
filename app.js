@@ -233,7 +233,7 @@ $(document).ready(function () {
 
     $('#back_button').on('click', function(e){
         $('#back_button').hide();
-        loadAndShow("cover-menu.html",initCoverMenu);
+        loadAndShow("cover-menu.html",initCover);
     });
 
 
