@@ -1,19 +1,11 @@
 // Initialize Swiper
 $(document).ready(function () {
 
-
-    var isOK = false;
     var preload;
-    var swiper_cover;
-    var swiper_main;
-    var swiper_vertical;
-    var swiper_vertical_b;
     var currentIndex = 0;
-    var currentIndex_swiper_vertical = 0;
-    var currentIndex_swiper_vertical_b = 0;
-    var page_02 = [];
-    var page_04 = [];
     var playing;
+    var swiper;
+    var currentPage;
 
     var cover_imgs = [
         {src:"imgs/01-01-icon.svg", type:createjs.AbstractLoader.IMAGE},
@@ -215,26 +207,31 @@ $(document).ready(function () {
 
     initAudio();
     loadAndShow("cover.html", initCover, cover_imgs);
+//    loadAndShow("page-04.html", initPageFour, page_04_imgs);
+//    loadAndShow("page-06.html", function(){ initPageSix(3)}, page_06_imgs);
 
     function loadAndShow(url, callback, imgs){
+        currentPage = url;
+
+        $('#main-content').removeClass();
+        $('#main-content').addClass('swiper-container');
+        $('#main-content').css('background-image','');
+
+
+        $('#loading-percent').html('0');
         $('#loading').css('opacity', '1');
         $(".outside-content").css('opacity', '0');
         $('#main-content').css('opacity', '0');
         $.get(url, function(response){
             $('#main-content').html(response);
-            if(callback){
-                callback();
-            }
-            if(imgs){
-                preloadImgs(imgs);
-            }
-            else{
-                hideLoaderShowContent();
-            }
+//            if(callback){
+//                callback();
+//            }
+            preloadImgs(imgs,callback);
         });
     }
 
-    function preloadImgs(imgs){
+    function preloadImgs(imgs,callback){
 
         preload = new createjs.LoadQueue(true);
         var plugin = {
@@ -251,12 +248,8 @@ $(document).ready(function () {
         };
         preload.installPlugin(plugin);
         preload.loadManifest(imgs);
-        preload.on("complete", preloadComplete);
+        preload.on("complete", function(){ hideLoaderShowContent(callback)});
         preload.on("progress", preloadOverallProgress);
-    }
-
-    function preloadComplete(e){
-        hideLoaderShowContent();
     }
 
     function preloadOverallProgress(){
@@ -264,17 +257,16 @@ $(document).ready(function () {
         $('#loading-percent').html(Math.round(preload.progress * 100));
     }
 
-    function hideLoaderShowContent(){
+    function hideLoaderShowContent(callback){
         $('#loading').addClass("animated bounceOut").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
             $("#loading").removeClass("animated bounceOut");
             $("#loading").css('opacity', '0');
             $(".outside-content").css('opacity', '1');
             $("#main-content").css('opacity', '1');
-            showOnebyOne("swiper-slide-active");
+
+            callback();
         });
     }
-
-
 
     function initAudio(){
         $('#music-button').bind('click', function(){
@@ -315,7 +307,10 @@ $(document).ready(function () {
     }
 
     function initCover(){
-        var swiper = new Swiper ('#main-content', {
+        if(swiper){
+            swiper.destroy();
+        }
+        swiper = new Swiper ('#main-content', {
             // Optional parameters
             direction: 'vertical',
             effect:'fade',
@@ -338,6 +333,7 @@ $(document).ready(function () {
                 });
 
                 initCoverMenu();
+                currentIndex = 0;
 
             },
             onTransitionEnd: function(swiper){
@@ -361,7 +357,7 @@ $(document).ready(function () {
             }
         });
 
-        var swiper_slide = new Swiper ('.swiper_slide', {
+        var swiper_slide = new Swiper ('.swiper_fade_slide', {
             effect:'fade',
             autoplay:2000
         });
@@ -369,13 +365,24 @@ $(document).ready(function () {
     }
 
     $('#back_button').on('click', function(e){
-        $('#back_button').hide();
-        loadAndShow("cover-menu.html", initCover, cover_menu_imgs);
+
+        if(currentPage == "page-06.html" || currentPage == "page-07.html" || currentPage == "page-08.html"){
+            loadAndShow("page-03.html", initPageThree, page_03_imgs);
+        }
+        else{
+            $('#back_button').hide();
+            loadAndShow("cover-menu.html", initCover, cover_menu_imgs);
+        }
+
+
     });
 
 
     function initPageTwo(){
-        swiper_vertical = new Swiper ('#main-content', {
+        if(swiper){
+            swiper.destroy();
+        }
+        swiper = new Swiper ('#main-content', {
             noSwipingClass:"swiper-vertical-no-swiping",
             // Optional parameters
             direction: 'vertical',
@@ -384,52 +391,65 @@ $(document).ready(function () {
                 $('.back_to_top_button').on('click', function(e){
                     swiper.slideTo(0);
                 });
+                currentIndex = 0;
+                hideSlide("swiper-container", "swiper-slide");
+                showOnebyOne("swiper-slide-active");
             },
             onTransitionEnd: function(swiper){
 
-                if(currentIndex_swiper_vertical != swiper.activeIndex){
+                if(currentIndex != swiper.activeIndex){
                     showOnebyOne("swiper-slide-active");
                 }
-                currentIndex_swiper_vertical = swiper.activeIndex;
+                currentIndex = swiper.activeIndex;
             },
             onTransitionStart: function(swiper){
-                if(currentIndex_swiper_vertical != swiper.activeIndex){
-                    hideSlide("swiper_vertical", "swiper-slide-prev");
-                    hideSlide("swiper_vertical", "swiper-slide-next");
+                if(currentIndex != swiper.activeIndex){
+                    hideSlide("swiper-container", "swiper-slide");
                 }
             }
         });
     }
 
     function initPageFive(){
-        $('.swiper-one-page').addClass('swiper-slide-active');
+        hideSlide("swiper-container", "swiper-slide");
+        showOnebyOne("swiper-slide");
 
     }
 
     function initPageThree(){
-        $('.swiper-one-page').addClass('swiper-slide-active');
+        hideSlide("swiper-container", "swiper-slide");
+        showOnebyOne("swiper-slide");
+
         $('#link_button_5').on('click', function(e){
             $('#back_button').show();
-            loadAndShow("page-06.html", initPageSix, page_06_imgs);
+            loadAndShow("page-06.html", function(){ initPageSix(1)}, page_06_imgs);
 
         });
         $('#link_button_6').on('click', function(e){
             $('#back_button').show();
-            loadAndShow("page-07.html", initPageSix, page_07_imgs);
+            loadAndShow("page-07.html", function(){ initPageSix(2)}, page_07_imgs);
 
         });
         $('#link_button_7').on('click', function(e){
             $('#back_button').show();
-            loadAndShow("page-08.html", initPageSix, page_08_imgs);
+            loadAndShow("page-08.html", function(){ initPageSix(3)}, page_08_imgs);
 
         });
     }
     function initPageFour(){
-        swiper_vertical_b = new Swiper ('#main-content', {
+        if(swiper){
+            swiper.destroy();
+        }
+        swiper = new Swiper ('#main-content', {
             noSwipingClass:"swiper-vertical-b-no-swiping",
             // Optional parameters
             direction: 'vertical',
             onInit: function(swiper){
+
+                currentIndex = 0;
+                hideSlide("swiper-container", "swiper-slide");
+                showOnebyOne("swiper-slide-active");
+
                 $('#link_button_8').on('click', function(e){
                     $('#back_button').show();
                     swiper.slideTo(2);
@@ -458,6 +478,7 @@ $(document).ready(function () {
 
                     if (myVideo.paused){
                         myVideo.play();
+                        console.log(myVideo);
 
                         $(this).removeClass("down");
                         document.getElementById('bg-audio').pause();
@@ -471,20 +492,36 @@ $(document).ready(function () {
             },
             onTransitionEnd: function(swiper){
 
-                if(currentIndex_swiper_vertical_b != swiper.activeIndex){
+                if(currentIndex != swiper.activeIndex){
                     showOnebyOne("swiper-slide-active");
                 }
-                currentIndex_swiper_vertical_b = swiper.activeIndex;
+                currentIndex = swiper.activeIndex;
             },
             onTransitionStart: function(swiper){
-                if(currentIndex_swiper_vertical_b != swiper.activeIndex){
-                    hideSlide("swiper_vertical_b", "swiper-slide");
+                if(currentIndex != swiper.activeIndex){
+                    hideSlide("swiper-container", "swiper-slide");
                 }
             }
         });
     }
-    function initPageSix(){
-        var swiper_scroll = new Swiper ('#main-content', {
+    function initPageSix(index){
+        var bg_url;
+        if(index == 1){
+            bg_url = 'url(imgs/03-02-bg.jpg)';
+        }
+        else if(index == 2){
+            bg_url = 'url(imgs/03-05-bg.jpg)';
+        }
+        else{
+            bg_url = 'url(imgs/03-08-bg.jpg)';
+        }
+        $('#main-content').addClass('swiper_scroll');
+        $('#main-content').css('background-image',bg_url);
+
+        if(swiper){
+            swiper.destroy();
+        }
+        swiper = new Swiper ('#main-content', {
             // Optional parameters
             scrollbar: '.swiper-scrollbar',
             slideClass: 'swiper-scroll-slide',
@@ -495,83 +532,10 @@ $(document).ready(function () {
             onInit: function(swiper){
                 $('.scroll_top').on('click', function(e){
                     swiper.setWrapperTranslate(0);
-
                 });
             }
         });
     }
-
-
-    function initLink(){
-        $('#video_play_button').on('click', function(e){
-            var myVideo = document.getElementById("video");
-
-            if (myVideo.paused){
-                myVideo.play();
-
-                $(this).removeClass("down");
-                document.getElementById('bg-audio').pause();
-                playing = false;
-            }
-            else{
-                myVideo.pause();
-            }
-
-        });
-        $('.play_button').on('click', function(e){
-            swiper_cover.slideNext(true, 1000);
-            swiper_cover.startAutoplay();
-
-            $(this).addClass("down");
-            document.getElementById('bg-audio').play();
-            playing = true;
-
-        });
-
-
-        $('#link_button_5').on('click', function(e){
-            $('#back_button').show();
-            swiper_main.slideTo(5);
-
-        });
-        $('#link_button_6').on('click', function(e){
-            $('#back_button').show();
-            swiper_main.slideTo(6);
-
-        });
-        $('#link_button_7').on('click', function(e){
-            $('#back_button').show();
-            swiper_main.slideTo(7);
-
-        });
-        $('#link_button_8').on('click', function(e){
-            $('#back_button').show();
-            swiper_vertical_b.slideTo(2);
-
-        });
-        $('#back_button').on('click', function(e){
-            if(swiper_main.activeIndex == 5 || swiper_main.activeIndex == 6 || swiper_main.activeIndex == 7){
-                swiper_main.slideTo(2);
-            }
-            else if(swiper_main.activeIndex == 1){
-                swiper_main.slideTo(0);
-                $('#back_button').hide();
-                swiper_vertical.removeSlide([1,2,3,4,5,6,7,8,9,10]);
-                currentIndex_swiper_vertical = 0;
-            }
-            else if(swiper_main.activeIndex == 3){
-                swiper_main.slideTo(0);
-                $('#back_button').hide();
-                swiper_vertical_b.removeSlide([1,2,3,4,5,6,7,8,9,10,11,12,13]);
-                currentIndex_swiper_vertical_b = 0;
-            }
-            else{
-                swiper_main.slideTo(0);
-                $('#back_button').hide();
-            }
-        });
-    }
-
 
     function hideOpacity(obj){
         obj.css('opacity', '0');
@@ -579,7 +543,6 @@ $(document).ready(function () {
     function showOpacity(obj){
         obj.css('opacity', '1');
     }
-
 
     function hideSlide(parrentClassString, classString){
 
