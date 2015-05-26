@@ -155,3 +155,43 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+#video-bg{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0;
+}
+video {
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute;
+    top: 0;
+    left:0;
+
+}
+#videocover {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+#music-button{
+    background-image:url(imgs/sound-on-icon.svg);
+    background-size:100%;
+    background-repeat:no-repeat;
+    background-position: center center;
+    float: right;
+    margin-top: 10px;
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+
+}
+#music-button.down{
+    background-image:url(imgs/sound-icon.svg);
+}

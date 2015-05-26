@@ -487,7 +487,6 @@ $(document).ready(function () {
                     else{
                         myVideo.pause();
                     }
-
                 });
             },
             onTransitionEnd: function(swiper){

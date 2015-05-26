@@ -14,32 +14,6 @@
     <!-- App CSS -->
     <link rel="stylesheet" href="app.css">
 
-    <style>
-        video {
-            width: 100% !important;
-            height: auto !important;
-            position: absolute;
-            top: 0;
-            bottom:0;
-            opacity: 0;
-        }
-        #music-button{
-            background-image:url(imgs/sound-on-icon.svg);
-            background-size:100%;
-            background-repeat:no-repeat;
-            background-position: center center;
-            float: right;
-            margin-top: 10px;
-            margin-right: 10px;
-            width: 30px;
-            height: 30px;
-
-        }
-        #music-button.down{
-            background-image:url(imgs/sound-icon.svg);
-        }
-
-    </style>
 </head>
 <body style="background-color: #0a60af">
 <audio id="bg-audio" src="imgs/time-travel.mp3" loop></audio>
@@ -50,6 +24,13 @@
 
     <div class="space-20"></div>
     <div style="color: #ffffff"><span id="loading-percent">1</span>%</div>
+</div>
+
+<div id="video-bg">
+    <div id="videocover">&nbsp;</div>
+    <video id="video" preload="yes">
+        <source src=imgs/movie-out.mp4 type=video/mp4>
+    </video>
 </div>
 
 <!-- Swiper -->
